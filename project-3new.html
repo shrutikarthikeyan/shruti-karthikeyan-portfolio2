@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<head>
+  <title>Free Creative Portfolio Template: Mar 2024 Version | Work Page</title>
+  <meta name="description"
+    content="When writing a meta description, keep it between 140 and 160 characters so Google can display your entire message. Don’t forget to include your keyword!">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="screenshot.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <script src="https://kit.fontawesome.com/d300c2ea15.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles/style.css">
+  <style>
+    /* Add styles for transition effect */
+    * {
+      transition: color 0.5s ease, background-color 0.5s ease;
+    }
+  </style>
+  <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        position: relative;
+        padding: 20px;
+        background-color: #333; /* Optional background for the header */
+        color: #E6693D; /* Optional text color for the header */
+    }
+
+    .menu-icon {
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .menu-overlay {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #FFF8F0;
+        z-index: 1000; /* Sit on top */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color:#E6693D;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 400;
+        font-size: 45px;
+        text-decoration: underline;
+        margin-top: 0;
+        padding-top: 0;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 6px; /* Adjust this value to create space above the underline */
+        
+    }
+
+    .menu-item {
+        color:#E6693D;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 400;
+        font-size: 45px;
+        text-decoration: none;
+        padding-top: 5rem;
+    }
+    .menu-item.underline {
+    text-decoration: underline; /* Apply underline only for WORK */
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px; /* Space above the underline */
+}
+     .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color:#E6693D;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 400;
+        font-size: 45px;
+        text-decoration: none;
+     }
+     .menu-item:hover {
+    color: black; /* Change text color on hover */
+    text-decoration-color: black; /* Change underline color on hover */
+    color: black;
+}
+.menu:hover {
+    color: black; /* Change color to black on hover */
+}
+
+
+
+
+
+    .close-btn {
+        position: absolute;
+        top: 27px;
+        right: 20px;
+        font-size: 76px;
+        color: #E6693D;
+        cursor: pointer;
+    }
+
+    /* Add your additional styles here */
+</style>
+
+<body class="work-page">
+  <header class="hero-header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/branding-images/middlelogo.svg" alt="Shruti Karthikeyan Logo">
+      </a>
+    </div>
+    <nav class="navbar">
+      <div class="menu-icon" id="menu-icon">&#9776;</div> <!-- Menu Icon -->
+      <div class="menu-overlay" id="menu-overlay">
+        <div class="close-btn" id="close-btn">&times;</div> <!-- Close Button -->
+        <nav class="menu">
+            <a href="work-clean.html" class="menu-item underline">WORK</a>
+            <a href="illustration.html" class="menu-item">ILLUSTRATION</a>
+            <a href="about.html" class="menu-item">ABOUT</a>
+        </nav>
+    </div>
+      <div class="nav-container desktop">
+      <ul class="branding-navigation">
+        <li><a href="work-clean.html" class="custom-navigation active">WORK</a></li>
+        <li><a href="illustration.html" class="custom-navigation">ILLUSTRATION</a></li>
+        <li><a href="about.html" class="custom-navigation">ABOUT</a></li>
+        
+      </ul>
+      </div>
+    </div>
+    </nav>
+  </header>
+  <div class="project-wrapper">
+    <aside class="project-aside">
+      <div class="project-info">
+        <p class="project-title">Natural Vitality Calm</p>
+        <p class="project-category">WEBSITE DESIGN | ILLUSTRATION</p>
+        <p class="secondary-title">Project Overview</p>
+        <p class="project-description">
+          <p class="description"><span class="bold">Client:</span> Natural Vitality Calm.</p>
+          <p class="description"><span class="bold">Location:</span> Canada, US.</p>
+          <p class="description"><span class="bold">Scope:</span> Develop sponsored content on a website promoting Natural Vitality’s Calm sleeping supplement. </p>
+      </div>
+  </div>
+</body>
+
+</html>

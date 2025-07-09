@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change All Colors</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0; /* Optional background */
+        }
+        .color-box {
+            width: 300px; /* Fixed width */
+            height: 200px; /* Fixed height */
+            background-color: #E6693D; /* Example color */
+            transition: background-color 1s; /* Smooth transition */
+            border-radius: 8px; /* Optional rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="color-box">This is a box!</div> <!-- Example box to change color -->
+    <p style="color: #E6693D;">This is a text example.</p> <!-- Example text to change color -->
+
+    <script>
+        // Function to change all occurrences of a specific color
+        function changeAllColors() {
+            // Get all elements in the document
+            const allElements = document.querySelectorAll('*'); 
+
+            allElements.forEach(element => {
+                // Check if the background color is the original color
+                if (getComputedStyle(element).backgroundColor === 'rgb(230, 105, 61)') {
+                    element.style.backgroundColor = '#6593E9'; // Change to new color
+                } else if (getComputedStyle(element).color === 'rgb(230, 105, 61)') {
+                    element.style.color = '#6593E9'; // Change text color
+                }
+            });
+        }
+
+        // Set interval to change colors every 30 seconds
+        setInterval(changeAllColors, 10000);
+
+        // Initial color change after 30 seconds
+        setTimeout(changeAllColors, 10000);
+    </script>
+
+</body>
+</html>

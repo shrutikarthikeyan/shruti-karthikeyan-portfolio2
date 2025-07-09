@@ -1,0 +1,3068 @@
+/* 
+
+███████  ██████  ███    ██ ████████ ███████ 
+██      ██    ██ ████   ██    ██    ██      
+█████   ██    ██ ██ ██  ██    ██    ███████ 
+██      ██    ██ ██  ██ ██    ██         ██ 
+██       ██████  ██   ████    ██    ███████ 
+
+*/
+
+/* TODO: Delete the Google Fonts below and add the Google Fonts you want to use on your site. Each Google font that you load will slightly increase the download speed of your site so make sure to only included necessary fonts here. */
+
+@import url("https://fonts.googleapis.com/css2?family=Hepta+Slab|Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Erica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*
+
+Imported stylesheets. Remove the ones you do not want to use.
+
+██ ███    ███ ██████   ██████  ██████  ████████      ██████ ███████ ███████ 
+██ ████  ████ ██   ██ ██    ██ ██   ██    ██        ██      ██      ██      
+██ ██ ████ ██ ██████  ██    ██ ██████     ██        ██      ███████ ███████ 
+██ ██  ██  ██ ██      ██    ██ ██   ██    ██        ██           ██      ██ 
+██ ██      ██ ██       ██████  ██   ██    ██         ██████ ███████ ███████ 
+
+*/
+
+/* TODO: Delete any stylesheets that you do not want to use. */
+
+@import url("make-something-fly.css");
+@import url("animated-gradient.css");
+@import url("text-stroke.css");
+@import url("stroke-shadow.css");
+@import url("experiments.css");
+@import url("style-guide.css");
+@import url("scroll-to-top.css");
+
+/*
+
+X-Small devices (portrait phones, less than 576px) 
+No media query for `xs` since this is the default in Bootstrap 
+
+███    ███  ██████  ██████  ██ ██      ███████     ███████ ██ ██████  ███████ ████████ 
+████  ████ ██    ██ ██   ██ ██ ██      ██          ██      ██ ██   ██ ██         ██    
+██ ████ ██ ██    ██ ██████  ██ ██      █████       █████   ██ ██████  ███████    ██    
+██  ██  ██ ██    ██ ██   ██ ██ ██      ██          ██      ██ ██   ██      ██    ██    
+██      ██  ██████  ██████  ██ ███████ ███████     ██      ██ ██   ██ ███████    ██    
+                                                                                       
+*/
+
+/* Add Border Box and Smooth Scroll */
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  cursor: url("../assets/temp/up-cursor.png"), auto !important;
+  /* TODO: Change the url above to add a custom cursor. Delete the line above if you want to use the default browser cursor. */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Use variable for to easily change your theme's colour scheme and typography.
+
+██    ██  █████  ██████  ██  █████  ██████  ██      ███████ ███████ 
+██    ██ ██   ██ ██   ██ ██ ██   ██ ██   ██ ██      ██      ██      
+██    ██ ███████ ██████  ██ ███████ ██████  ██      █████   ███████ 
+ ██  ██  ██   ██ ██   ██ ██ ██   ██ ██   ██ ██      ██           ██ 
+  ████   ██   ██ ██   ██ ██ ██   ██ ██████  ███████ ███████ ███████ 
+                                                                    
+*/
+
+/* Design variables refer to CSS variables that store specific design elements, such as colors and typography, which can be utilized throughout a website. Instead of individually modifying each CSS element, designers can quickly make changes by using design variables.
+
+/* TODO: Adjust the variables below, create new variables as desired, and delete the variables that you do not want to use. */
+
+:root {
+  --body-typeface: "Open Sans", sans-serif;
+  --heading-typeface: "Paytone One", sans-serif;
+  --project-title-typeface: "Open Sans", sans-serif;
+  --background-color: #FFF8F0;
+  --background-color-about: #FFF8F0;
+  --background-color-footer: #FFF8F0;
+  --alt-background-color: #000000;
+  --background-color-holding-page: rgba(82, 0, 255, 0.6);
+  --h1-color: #E6693D;
+  --h2-color: #E6693D;
+  --h3-color: #000000;
+  --h4-color: #E6693D;
+  --h5-color: #000000;
+  --h6-color: #000000;
+  --primary-text-color: #000000;
+  --holding-page-title-color: #ebedf0;
+  --accent-color: #E6693D;
+  --overlay-color: #E6693D;
+  --overlay-title-color: #ffffff;
+  --overlay-description-color: #ffffff;
+  --hyperlink-color: d8305c;
+  --hyperlink-alternate-color: orangered;
+  --hover-color: #111;
+  --visited-color: #000000;
+  --project-title-color: #d8305c;
+  --project-sidebar-background-color: #FFF8F0;
+  --project-sidebar-text-color: rgb(0, 0, 0);
+  --heart-color: darkred;
+  --holding-page-footer-color: #f8f8ff;
+  --text-selection-background-color: #d8305c;
+  --linear-gradient-color-1: #FFF8F0;
+  --linear-gradient-color-2: #FFF8F0;
+  --linear-gradient-color-3: #FFF8F0;
+  --stroke-shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+body {
+  font-family: var(--body-typeface);
+  color: var(--primary-text-color);
+  background: var(--background-color);
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* The ::selection CSS pseudo-element applies styles to the part of a document that has been highlighted by the user (such as clicking and dragging the mouse across text). */
+
+::selection {
+  background: var(--accent-color);
+}
+
+/* Make all images responsive */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  /* Removes the gap/space in inline elements for text descenders. */
+  object-fit: contain;
+  /* This is optional. Also try cover or leave out entirely. */
+}
+
+/* Global & Mobile Typography 
+
+████████ ██    ██ ██████   ██████   ██████  ██████   █████  ██████  ██   ██ ██    ██ 
+   ██     ██  ██  ██   ██ ██    ██ ██       ██   ██ ██   ██ ██   ██ ██   ██  ██  ██  
+   ██      ████   ██████  ██    ██ ██   ███ ██████  ███████ ██████  ███████   ████   
+   ██       ██    ██      ██    ██ ██    ██ ██   ██ ██   ██ ██      ██   ██    ██    
+   ██       ██    ██       ██████   ██████  ██   ██ ██   ██ ██      ██   ██    ██    
+                                                                                     
+*/
+body {
+  cursor: none;
+}
+
+.cursor, .ripple {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+}
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-text {
+  font-size: 1.2rem;
+  font-weight: 100;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: black!important;
+  text-align: center;
+  line-height: 1.2;
+  pointer-events: none;
+  display: block;
+}
+
+
+/* Ripple effect */
+.ripple {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #fff8F0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes clickRipple {
+  0% {
+    width: 10px;
+    height: 10px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+h1 {
+  font-size: 1rem;
+  font-family: var(--heading-typeface);
+  margin-bottom: 0.16rem;
+  color: var(--h1-color);
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: var(--body-typeface);
+  font-weight: 300;
+  margin-bottom: rem;
+  color: var(--h2-color);
+  line-height: 1.3;
+}
+
+h3 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  color: var(--h3-color);
+}
+
+h4 {
+  font-size: 3.3rem;
+  font-family: var(--heading-typeface);
+  margin-bottom: rem;
+  color: var(--h2-color);
+  line-height: 1.3;
+}
+
+h5 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-top:0.5rem;
+  color: var(--h5-color);
+  font-weight: 300;
+}
+h9{
+  font-size: 1.8rem;
+  font-weight: 100;
+  font-family: "Paytone One", sans-serif;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  color: #E6693D;
+}
+h6 {
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: "Quicksand", sans-serif;
+  margin-top: 0.7rem;
+  margin-bottom: 1.8rem;
+  color: #E6693D;
+}
+h10{
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 1rem;
+  color: #E6693D;
+}
+h11{
+  font-size: 4rem;
+  font-family: "Paytone One", sans-serif;
+  color: #FFF8F0;
+}
+p {
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-family: "Paytone One", sans-serif;
+  margin-bottom: 0.6rem;
+  color: #E6693D;
+}
+
+em {
+  font-style: italic;
+}
+
+.fineprint {
+  font-size: 0.875rem;
+}
+
+.hero-headline {
+  color: var(--overlay-color);
+}
+
+.project-title {
+  font-size: 3.725rem;
+  font-family: var(--project-title-typeface);
+  color: var(--project-title-color);
+  margin-bottom: 1rem;
+}
+
+.overlay-title {
+  font-size: 2.875rem;
+  color: var(--overlay-title-color);
+}
+
+.overlay-description {
+  color: var(--overlay-description-color);
+}
+
+
+/* Hyperlink Styles */
+
+a:link {
+  color: #E6693D;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #E6693D;
+
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+a:focus {
+  outline: 1px solid var(--accent-color);
+}
+
+a:active {
+  color: var(--hover-color);
+  /* Tap on mobile */
+}
+
+.navigation-arrow {
+  color: var(--alt-background-color);
+}
+
+.navigation-arrow:link {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--accent-color);
+  color: transparent;
+}
+
+.navigation-arrow:active,
+.navigation-arrow:hover {
+  color: var(--accent-color);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--accent-color);
+}
+
+.colored-link {
+  color: #000000;
+}
+
+.custom-navigation {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  
+}
+
+.heart {
+  color: var(--heart-color);
+}
+
+.footer-nav-item {
+  line-height: 1.3;
+}
+
+.award-item {
+  line-height: 1.3;
+}
+
+.social-item {
+  line-height: 1.3;
+}
+
+.list-item {
+  line-height: 1.3;
+  list-style-type: disc;
+  margin-left: 1.2rem;
+}
+
+.project-description {
+  font-size: 1.3rem;
+  line-height: 1.65rem;
+  margin-bottom: 0rem;
+  margin-right: 0rem;
+}
+
+/* Hero 
+
+██   ██ ███████ ██████   ██████  
+██   ██ ██      ██   ██ ██    ██ 
+███████ █████   ██████  ██    ██ 
+██   ██ ██      ██   ██ ██    ██ 
+██   ██ ███████ ██   ██  ██████  
+                                 
+*/
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.branding-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem;
+  align-items: flex-start;
+}
+
+.logo {
+  width: 7rem;
+  /* TODO: Adjust the width of the logo on mobile devices here. */
+}
+.hero-headline-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+.hero-icon {
+  font-size: 4rem;
+}
+
+.hero-footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero-footer-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+/* General styles for navbar */
+.navbar {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 10px; /* Optional: adjust padding as needed */
+  background-color: #FFF8F0;
+  
+}
+
+.nav-container {
+  display: flex; /* Ensure nav items are aligned horizontally */
+}
+
+.nav-menu {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Align items in a row */
+  margin: 0; /* Reset margins */
+  padding: 0; /* Reset padding */
+}
+
+.nav-item {
+  margin-left: 20px; /* Space between menu items */
+}
+
+.custom-navigation {
+  text-decoration: none; /* Remove underline */
+  color: #FFF8F0; /* Adjust text color */
+  transition: color 0.3s; /* Optional: add transition for hover effect */
+}
+
+.custom-navigation:hover {
+  color: #FFD700; /* Change color on hover */
+}
+
+
+/* Work Page Layout
+
+██     ██  ██████  ██████  ██   ██     ██████   █████   ██████  ███████ 
+██     ██ ██    ██ ██   ██ ██  ██      ██   ██ ██   ██ ██       ██      
+██  █  ██ ██    ██ ██████  █████       ██████  ███████ ██   ███ █████   
+██ ███ ██ ██    ██ ██   ██ ██  ██      ██      ██   ██ ██    ██ ██      
+ ███ ███   ██████  ██   ██ ██   ██     ██      ██   ██  ██████  ███████ 
+
+*/
+
+.hero-headline-wrapper {
+  padding-top: 20px !important;
+  padding-bottom: 30px !important;
+}
+
+
+
+.work-wrapper {
+  flex: 1;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* Padding around work grid and project page */
+.portfolio,
+.project-wrapper {
+  padding: 0.25rem;
+}
+
+.portfolio .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+  gap: 20px; /* Adjusts the space between grid items */
+  padding: 20px; /* Optional: adds padding around the grid */
+}
+
+.work-page-grid-item img {
+  width: 100%; /* Ensures images fill the grid item */
+  height: auto; /* Maintains the aspect ratio of images */
+  display: block; /* Removes bottom whitespace */
+  border-radius: 20px;
+}
+/* Defining the work page grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  margin-bottom: 2.5rem;
+  /* Magical, media-query-less responsiveness is achieved using the repeat() function and the auto placement keywords. To achieve wrapping, we can use the auto-fit. If you're using auto-fit, the content will stretch to fill the entire row width.  Specify a minimum width for the columns, using the minmax() function. The 1fr is what tells the browser to distribute the space between the columns so that each column equally gets one fraction of that space.  */
+}
+
+.work-page-grid-item {
+  width: 100%;
+  height: auto;
+  position: relative;
+  /* Required to contain overlay size */
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.75s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+  background-color: var(--overlay-color);
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.work-page-grid-item:hover .overlay {
+  visibility: visible;
+  opacity: 0.8;
+}
+.work-page .portfolio .grid .work-page-grid-item img {
+  border-radius: 30px; /* Adjust this value to control the rounding */
+  overflow: hidden;
+}
+/* Target the grid container for project images */
+.work-page .portfolio .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates 3 equal-width columns */
+  gap: 30px; /* Adds space between grid items */
+}
+/* Style for social media icons */
+.social-icons i {
+  font-size: 2.2rem; /* Adjust size as needed */
+  margin: 0 0px; /* Adds space between icons */
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap:15px; /* Space between icons */
+  margin-top: 15px;
+}
+
+.icon-link {
+  color: #000000; /* Adjust color as needed */
+  font-size: 24px; /* Adjust size as needed */
+  transition: color 0.3s;
+}
+.icon-link2{
+  color: #FFF8F0; /* Adjust color as needed */
+  font-size: 24px; /* Adjust size as needed */
+  transition: color 0.3s;
+}
+
+.icon-link:hover {
+  color: #000000; /* Add hover color; adjust as needed */
+}
+.hero-headline-wrapper{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+.typewriter {
+  display: inline-block;
+  color: #E6693D; /* Initial Typewriter Text Color */
+  font-size: 4rem;
+  line-height: 5rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid; /* Blinking cursor */
+  animation: typing 9s steps(30, end) infinite, blink-caret 0.5s step-end infinite, color-change 8s infinite; /* Add color-change animation */
+}
+
+/* Typewriter typing and erasing effect with 6-second pauses */
+@keyframes typing {
+  0% { width: 0; }
+  45% { width: 100%; } /* Type out the text */
+  80% { width: 100%; } /* Pause for 6 seconds */
+  15% { width: 0; } /* Slowly erase the text */
+  100% { width: 0; } /* Pause for another 6 seconds before restarting */
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+.link-button {
+  background: none; /* Remove default button background */
+  color: #E6693D;
+  border: none; /* Remove default border */
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.57rem;
+  font-weight: 400; /* Inherit the weight of the surrounding text */
+  cursor: pointer; /* Show pointer on hover */
+  padding: 0; /* Remove padding */
+}
+
+.link-button:hover {
+  color: #000000 !important/* Change color on hover */
+}
+/* Tilt effect on click */
+.link-button:active {
+  transform: rotate(-5deg); /* Rotate slightly on click */
+}
+.custom-navigation {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease; /* Transition effect */
+}
+
+.custom-navigation:active {
+  transform: rotate(-20deg); /* Tilt effect */
+}
+.image-container {
+  position: relative;
+  overflow: hidden; /* Ensures the overlay doesn't extend outside the image */
+  border-radius: 30px;
+  object-fit: cover;
+}
+.overlay{
+  border-radius: 30px!important
+}
+.image-container img {
+  display: block; /* Removes the bottom space/gap */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  border-radius: 30px!important
+}
+
+  
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); /* Black background with transparency */
+  display: flex; /* Center text */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for overlay */
+}
+
+.image-container:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.image-container:hover img {
+  opacity: 0.75; /* Darken image on hover */
+}
+
+.overlay-text {
+  color: #FFF8F0; /* Text color */
+  font-size: 3rem; /* Adjust size as needed */
+  font-family: "Paytone One", sans-serif;
+  text-align: center; /* Center the text */
+ 
+}
+.additional-text {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.57rem; /* Adjust font size as needed */
+  color: #E6693D; /* Change color as desired */
+  margin-top:0.75rem; /* Space between the overlay text and additional text */
+  text-align: center;
+  
+}
+.color-box {
+  width: 100%; /* Full width */
+  max-width: 300px; /* Max width for larger screens */
+  height: 200px; /* Fixed height */
+  background-color: #E6693D; /* Initial color */
+  transition: background-color 1s; /* Smooth transition for color change */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Soft shadow */
+}.link-button:hover{
+  color: black !important
+}
+.custom-navigation:hover{
+  color: black !important
+}
+
+/* 
+
+ █████  ██████   ██████  ██    ██ ████████ 
+██   ██ ██   ██ ██    ██ ██    ██    ██    
+███████ ██████  ██    ██ ██    ██    ██    
+██   ██ ██   ██ ██    ██ ██    ██    ██    
+██   ██ ██████   ██████   ██████     ██    
+                                           
+*/
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 3rem;
+  background: var(--background-color-about);
+  padding: 1rem;
+  flex: 1;
+}
+
+.about-item-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.about-item-2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.about-item-3 {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.about-item-4 {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+#menu-icon{
+  font-size: 3.8rem; /* Adjust this value to make it larger */
+ /* Optional: add padding to increase clickable area */
+ padding-top: 1.2rem;
+ padding-right: 0.5rem;
+  padding-bottom: 0rem;
+  cursor: pointer;
+}
+/* Create a flex container for the content */
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align both columns at the top */
+  margin-top: 20px; /* Optional: add some space above */
+}
+
+/* Style for the text column */
+.text-column {
+  flex: 1; /* Allow this column to take up available space */
+  margin-right: 20px; /* Add some space between the columns */
+}
+
+/* Style for the image column */
+.image-column {
+  flex: 1; /* Allow this column to take up available space */
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-top: 3.8%;
+  display: flex;
+  justify-content: left; /* Center the image horizontally */
+}
+
+.image-column img {
+  max-width: 63%; /* Ensure image is responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 20px;
+}
+.aboutproject-title{
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.57rem;
+  font-weight: 400;
+  text-align: left;
+  line-height: 2rem;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.content-wrapper{
+  padding-left: 2.9%;
+  padding-right: 2.9%;
+}
+.content-wrapper{
+  margin-top: 0;
+  padding-top: 30px;
+  padding-bottom: 10%;
+}
+.aboutproject-title2{
+  font-family: "Paytone One", sans-serif;
+  color: #E6693D;
+  font-size: 3rem;
+  padding-bottom: 30px;
+  text-align: left;
+  padding-left: 5%;
+  padding-right: 0;
+}
+@media (max-width: 1750px) {
+  .image-column img {
+    max-width: 65%;
+    }
+  }
+@media (max-width: 1700px) {
+  .image-column img {
+    max-width: 65%;
+    }
+  }
+@media (max-width: 1650px) {
+  .image-column img {
+    max-width: 68%;
+    }
+  }
+  @media (max-width: 1600px) {
+    .image-column img {
+      max-width: 70%;
+      }
+      .aboutproject-title{
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+      }
+    }
+    @media (max-width: 1550px) {
+      .image-column img {
+        max-width: 70%;
+        }
+        .aboutproject-title{
+          font-size: 1.5rem;
+          line-height: 1.8rem;
+        }
+      }
+  @media (max-width: 1500px) {
+    .image-column img {
+      max-width: 75%;
+      }
+    }
+    @media (max-width: 1400px) {
+      .image-column img {
+        max-width: 80%;
+        }
+       
+      }
+      @media (max-width: 1350px) {
+        .image-column img {
+          max-width: 85%;
+          }
+          .aboutproject-title{
+            font-size: 1.3rem;
+            line-height: 1.7rem;
+          }
+        }
+        @media (max-width: 1200px) {
+          .image-column img {
+            max-width: 95%;
+            }
+            .image-column {
+              padding-top: 5%;
+              }
+          }
+          @media (max-width: 1150px) {
+            .image-column img {
+              max-width: 100%;
+              }
+              .aboutproject-title{
+                font-size: 1.3rem;
+                line-height: 1.7rem;
+              }
+              .image-column {
+            padding-top: 6%;
+            }
+          }
+  /* Mobile responsiveness */
+  @media (max-width: 1000px) {
+    .content-wrapper {
+      flex-direction: column; /* Stack the columns vertically on mobile */
+    }
+  
+    /* Ensure image comes first on mobile */
+    .image-column {
+      order: -1; /* Move the image column to the top */
+      margin-bottom: 5%; /* Add some space between image and text */
+    }
+  
+    .text-column {
+      margin-right: 0; /* Remove margin for text column */
+    }
+    .image-column img {
+      max-width:  100%;
+      }
+  }
+  @media (max-width: 768px) {
+  .image-column{
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .aboutproject-title2{
+    font-size: 2rem;
+    padding-bottom: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .aboutproject-title{
+    padding-bottom: 2%;
+      padding-left: 3%;
+      padding-right: 3%;
+      padding-bottom: 2.9%
+    }
+  }
+  @media (max-width: 700px) {
+    .aboutproject-title2{
+      font-size: 2rem;
+      padding-bottom: 3.3%;
+    }
+    .aboutproject-title{
+      padding-bottom: 3.3%;
+    }
+  }
+  @media (max-width: 500px) {
+    .aboutproject-title2{
+      font-size: 2rem;
+      padding-bottom: 3%;
+    }
+    .aboutproject-title{
+      padding-bottom: 3%;
+    }
+  }
+/* Global Footer
+
+███████  ██████   ██████  ████████ ███████ ██████  
+██      ██    ██ ██    ██    ██    ██      ██   ██ 
+█████   ██    ██ ██    ██    ██    █████   ██████  
+██      ██    ██ ██    ██    ██    ██      ██   ██ 
+██       ██████   ██████     ██    ███████ ██   ██ 
+                                                   
+*/
+
+.global-footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 3rem;
+  min-height: 50vh;
+  background: #E6693D;
+  padding: 1rem;
+}
+/* Footer base styles */
+.global-footer {
+  list-style-type: none;
+}
+
+/* Wrapper for columns */
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Left and Right Column Styling */
+.footer-left, .footer-right {
+  flex: 1;
+  padding: 10px;
+}
+.footer-right{
+  align-items: right;
+}
+
+/* Fine print centered across columns */
+.fineprint {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* Styling for social icons */
+.social-icons .icon-link {
+  color: #E6693D; /* Orange color */
+}
+.icon-link2{
+  color: #FFF8F0;
+}
+.social-icons a {
+  color: #fff8F0;
+  margin-right: 2px;
+}
+
+.social-icons a:hover {
+  color: #fff8f0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-columns {
+      flex-direction: column;
+  }
+
+  .footer-left, .footer-right {
+      text-align: left;
+  }
+}
+
+.footer-item-1,
+.footer-item-2,
+.footer-item-3 {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.footer-item-4 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+  /* Footer container styles */
+
+
+  /* Align the second item to the far right */
+  .footer-item-2 {
+    margin-left: auto;
+    text-align: right; /* Ensures text within aligns correctly */
+    padding-left: 0rem;
+    margin-left: 0rem;
+  }
+
+  /* Styling for footer links */
+  .footer-item-2 p {
+    margin: 0; /* Remove default margins */
+    padding-left: 0rem;
+    color: #FFF8F0; /* Ensure consistent color */
+  }
+
+.footer-item-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.footer-item-2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.footer-item-3 {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.footer-item-4 {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+.awards-list {
+  margin-bottom: 2rem;
+}
+.footer-heading{
+  color: #f8f8ff;
+  font-size: 4rem;
+}
+.social-icons{
+padding-left: 0px;
+margin-left: 0px;
+justify-content: left;
+}
+.icon-link2 i {
+  font-size: 6rem; /* Adjust this value as needed */
+  padding-right: 0.4rem;
+}
+.footer-item-2{
+  margin-right: 0rem;
+  padding-right: 0rem;
+  margin-top: 0rem;
+  padding-left: 0rem;
+  text-align: left;
+}
+.footer-item-1{
+ margin-top: 0;
+ padding-top: 0;
+}
+.fineprint{
+  color: #FFF8F0;
+  font-size: 1rem;
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 1.7rem;
+}
+.footer-item-3{
+  margin-top: 1rem;
+}
+.underline-text {
+  text-decoration: underline;
+  text-underline-offset: 6px; /* Adjust this value for desired spacing */
+}
+.footer{
+  padding: 0 0px;
+}
+.fa-envelope:hover{
+  color: black !important
+}
+.fa-behance:hover{
+  color: black !important
+}
+.fa-linkedin:hover{
+  color: black !important
+}
+.fa-instagram:hover{
+  color: black !important
+}
+.footer-bodycopy:hover{
+  color: black !important
+}
+.footer-bodycopy4:hover{
+  color: black !important
+}
+.footer-bodycopy5:hover{
+  color: black !important
+}
+.footer-bodycopy2:hover{
+  color: black !important
+}
+.footer-bodycopy22:hover{
+  color: black !important
+}
+.footer-bodycopy4, .footer-bodycopy5 {
+  color: #E6693D; /* Default text color */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+.footer-bodycopy4:hover, .footer-bodycopy5:hover {
+  color: black !important; /* Change text color on hover */
+}
+
+/* Change arrow color on hover */
+.footer-bodycopy4:hover i, .footer-bodycopy5:hover i {
+  color: black; /* Change arrow color to black on hover */
+}
+
+/* Optional: Set the arrow color to match the text by default */
+.no-color-change {
+  color: inherit; /* Inherit the color from the parent */
+  transition: color 0.2s ease; /* Smooth transition for arrow color */
+}
+.footer-heading-static{
+  font-family: "Paytone One", sans-serif; /* Change to any desired font */
+  font-size: 3rem; /* Adjust size as needed */
+  margin-top: 6%;
+  color:#FFF8F0; /* A different color, like a vibrant orange */
+}
+.footer-heading-static2{
+  font-family: "Paytone One", sans-serif; /* Change to any desired font */
+  font-size: 3rem; /* Adjust size as needed */
+  color:#FFF8F0;/* A different color, like a vibrant orange */
+}
+.footer-heading-static3{
+  font-family: "Paytone One", sans-serif; /* Change to any desired font */
+  font-size: 3rem; /* Adjust size as needed */
+  margin-top: 7.6%;
+  color:#FFF8F0;/* A different color, like a vibrant orange */
+}
+.footer-bodycopy4{
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.57rem;
+  line-height: 1.9rem;
+  font-weight: 400;
+  color: #FFF8F0;
+}
+.footer-bodycopy{
+  font-family: "Quicksand", sans-serif; /* Change to any desired font */
+  font-size: 1.8rem; /* Adjust size as needed */
+  text-decoration: underline;
+  font-weight: 400;
+  padding-bottom: 15px;
+  color:#FFF8F0;/* A different color, like a vibrant orange */
+}
+.footer-bodycopy2{
+  font-family: "Quicksand", sans-serif; /* Change to any desired font */
+  font-weight: 400;
+  margin-top: 5%;
+  font-size: 2rem; /* Adjust size as needed */
+  color:#FFF8F0;/* A different color, like a vibrant orange */
+
+}
+.footer-bodycopy22{
+  font-family: "Quicksand", sans-serif; /* Change to any desired font */
+  font-weight: 400;
+  margin-top: 0.5rem;
+  font-size: 2rem; /* Adjust size as needed */
+  color:#FFF8F0;/* A different color, like a vibrant orange */
+}
+.footer-bodycopy3{
+  font-family: "Quicksand", sans-serif; /* Change to any desired font */
+  font-size: 1.57rem; /* Adjust size as needed */
+  line-height: 1.9rem;
+  margin-top: 4%;
+  padding-right :25%;
+  font-weight: 400;
+  color:#FFF8F0;  /* A different color, like a vibrant orange */
+
+}
+
+.footer-bodycopy5{
+  font-family: "Quicksand", sans-serif; /* Change to any desired font */
+  font-size: 1.57rem; /* Adjust size as needed */
+  color:#FFF8F0; /* A different color, like a vibrant orange */
+  font-weight: 400;
+  line-height: 2rem;
+
+}
+.footer-social-icons a {
+    color: #FFF8F0 !important; /* This ensures the icons remain white */
+  
+}
+.underline{
+text-decoration-thickness: 1px;
+}
+.fineprint {
+  display: block; /* Make sure it’s not hidden */
+  color: #FFF8F0;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+/* Adjust the border radius for smaller screens */
+@media screen and (max-width: 1690px) {
+  .footer-heading-static3{
+  margin-top: 9.2%;
+  }
+  
+}
+@media screen and (max-width: 1500px) {
+ 
+}
+@media screen and (max-width: 1500px) {
+  .footer-heading-static3{
+  margin-top: 9.6%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .footer-heading-static3{
+    margin-top: 14%;
+    }
+    .featured-work{
+      margin-bottom: 14%;
+      }
+  
+}
+@media screen and (max-width: 1330px) {
+  .footer-heading-static3{
+    margin-top: 10%;
+  }
+}
+@media screen and (max-width: 1329px) {
+  .footer-heading-static3{
+    margin-top: 11%;
+  }
+}
+@media screen and (max-width: 1294px) {
+  .footer-heading-static3{
+    margin-top: 11%;
+  }
+}
+@media screen and (max-width: 1294px) {
+  .footer-heading-static3{
+    margin-top: 12%;
+  }
+}
+@media screen and (max-width: 1230px) {
+  .footer-heading-static3{
+    margin-top: 13.5%;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .icon-link2 i{
+    font-size: 5rem;
+  }
+  .footer-heading-static3{
+    margin-top: 14%;
+    padding-right: 10%;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .footer-heading-static3{
+    margin-top: 14%;
+    padding-right: 10%;
+  }
+  .icon-link2{
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 1210px) {
+    .footer-heading-static3{
+      margin-top: 13%;
+      padding-right: 10%;
+    }
+    .icon-link2{
+      font-size: 4rem;
+    }
+}
+ @media screen and (max-width: 1200px) {
+
+    .footer-heading-static3{
+      padding-right: 10%;
+      margin-top: 15%;
+    }
+    .icon-link2{
+      font-size: 4rem;
+    }
+  }
+  @media screen and (max-width: 1168px) {
+    .contact-info .footer-heading-static {
+      display: none;
+    }
+  .icon-link2 i{
+    padding-top: 0;
+    font-size: 5rem;
+  }
+}
+  @media screen and (max-width: 1072px) {
+    .contact-info .footer-heading-static {
+      display: none;
+    }
+  .icon-link2 i{
+    padding-top: 0;
+    font-size: 4rem;
+  }
+  
+  }
+  @media screen and (max-width: 1072px) {
+    .contact-info .footer-heading-static {
+      display: none;
+    }
+  .icon-link2 i{
+    padding-top: 0;
+    font-size: 3.5rem;
+  }
+.footer-bodycopy2{
+  margin-top: 8%;
+}
+  }
+@media screen and (max-width: 1400px) {
+  .footer-bodycopy3{
+    padding-right: 35%;
+  
+  }
+.footer-heading-static{
+  padding-top: 0rem;
+  margin-top: 3vh;
+}
+.footer-heading-static3{
+  padding-top: 0;
+  margin-top: 0;
+}
+.global-footer{
+  grid-gap: 0rem;
+}
+.footer-bodycopy2{
+  margin-top: 5vh;
+}
+.footer-bodycopy22{
+  margin-top: 0;
+  padding-top: 0;
+}
+.footer-links{
+  margin-top: 0;
+}
+.featured-work{
+  margin-bottom: 0;
+  padding-bottom: 3%;
+}
+.footer-featured-work {
+  order: 1;  /* Featured Work should appear first on mobile */
+}
+.footer-links {
+  order: 2;  /* WORK, ILLUSTRATION, ABOUT should appear last on mobile */
+}
+.footer-contact-info {
+  order: 3;  /* Contact info should appear second on mobile */
+}
+.social-icons .icon-link2 i {
+  font-size: 3.5rem; /* Adjust to the desired size */
+  padding-right: 0rem;
+}
+.contact-info .footer-heading-static {
+  display: none;
+}
+/* Move social icons to the end in mobile */
+.footer-item.footer-right {
+  display: flex;
+  flex-direction: column;
+} 
+.contact-info{
+  order: 4; /* Set order to ensure social icons appear last */
+}
+.fineprint{
+padding-bottom: 0;
+margin-bottom: 0.5rem;
+}
+}
+@media screen and (max-width: 768px) {
+  .footer-bodycopy2{
+    margin-top: 4%;
+  }
+  .footer-heading-static2{
+    font-size: 2rem;
+    margin-top: 0;
+    }
+    .footer-heading-static{
+      font-size: 2rem;
+      padding-top: 0%;
+      margin-top: 4vh;
+    }
+    .footer-heading-static3{
+        font-size: 2rem;
+        padding-top: 0%;
+        margin-top: 1vh;
+    }
+    .footer-bodycopy{
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+    .footer-bodycopy3{
+      font-size: 1.3rem;
+      padding-right: 0%;
+      line-height: 1.6rem;
+    
+    }
+    .footer-bodycopy4{
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+    }
+      .footer-bodycopy5{
+          font-size: 1.3rem;
+          line-height: 1.6rem;
+    }
+    .footer-bodycopy22{
+      margin-top: 0;
+      padding-top: 0;
+    }
+    .footer-bodycopy22.underline{
+            font-size: 1.5rem;
+            margin-top: 0;
+            padding-top: 0;
+    }
+    .footer-bodycopy2.hoverable{
+        font-size: 1.5rem;
+        margin-top: 3vh;
+            padding-top: 0;
+    }
+
+    .icon-link2 i{
+      font-size: 3rem;
+    }
+    .global-footer{
+      grid-gap: 0;
+    }
+    .footer-featured-work {
+      order: 1;  /* Featured Work should appear first on mobile */
+    }
+    .footer-links {
+      order: 2;  /* WORK, ILLUSTRATION, ABOUT should appear last on mobile */
+    }
+    .footer-contact-info {
+      order: 3;  /* Contact info should appear second on mobile */
+    }
+    .social-icons .icon-link2 i {
+      font-size: 3.5rem; /* Adjust to the desired size */
+      padding-right: 0rem;
+    }
+    .contact-info .footer-heading-static {
+      display: none;
+    }
+    /* Move social icons to the end in mobile */
+    .footer-item.footer-right {
+      display: flex;
+      flex-direction: column;
+    } 
+    .contact-info{
+      order: 4; /* Set order to ensure social icons appear last */
+    }
+    .fineprint{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    }
+    .featured-work{
+      margin-top: 0;
+      padding-top: 0;
+      padding-bottom: 4.5%;
+      margin-bottom: 0;
+    }
+}
+ 
+@media screen and (max-width: 576px) {
+  .footer-bodycopy2{
+    margin-top: 4%;
+  }
+  .footer-heading-static2{
+    font-size: 2rem;
+    }
+    .footer-heading-static{
+      font-size: 2rem;
+      padding-top: 0%;
+    }
+    .footer-heading-static3{
+        font-size: 2rem;
+        padding-top: 0%;
+    }
+    .footer-bodycopy{
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .footer-bodycopy3{
+      font-size: 1.3rem;
+      padding-right: 0%;
+      line-height: 1.6rem;
+    
+    }
+    .footer-bodycopy4{
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+    }
+      .footer-bodycopy5{
+          font-size: 1.3rem;
+          line-height: 1.6rem;
+    }
+    .footer-bodycopy22{
+      margin-top: 0;
+      padding-top: 0;
+    }
+    .footer-bodycopy22.underline{
+            font-size: 1.5rem;
+    }
+    .footer-bodycopy2.hoverable{
+        font-size: 1.5rem;
+    }
+
+    .icon-link2 i{
+      font-size: 3rem;
+    }
+    .global-footer{
+      grid-gap: 0;
+    }
+    .footer-featured-work {
+      order: 1;  /* Featured Work should appear first on mobile */
+    }
+    .footer-links {
+      order: 2;  /* WORK, ILLUSTRATION, ABOUT should appear last on mobile */
+    }
+    .footer-contact-info {
+      order: 3;  /* Contact info should appear second on mobile */
+    }
+    .social-icons .icon-link2 i {
+      font-size: 3.5rem; /* Adjust to the desired size */
+      padding-right: 0rem;
+    }
+    .contact-info .footer-heading-static {
+      display: none;
+    }
+    /* Move social icons to the end in mobile */
+    .footer-item.footer-right {
+      display: flex;
+      flex-direction: column;
+    } 
+    .contact-info{
+      order: 4; /* Set order to ensure social icons appear last */
+    }
+    .fineprint{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    }
+    .featured-work{
+      margin-top: 0;
+      padding-top: 0;
+      padding-bottom:7%;
+      margin-bottom: 0;
+    }
+}
+.footer-bodycopy{
+  text-decoration: underline!important
+  
+}
+.footer-bodycopy{
+  color: #FFF8F0!important
+  
+}
+.footer-bodycopy4{
+  color: #FFF8F0!important
+}
+.footer-bodycopy5{
+  color: #FFF8F0!important
+}
+.footer-bodycopy22.underline{
+  color: #FFF8F0;
+  text-decoration: underline;
+}
+.footer-bodycopy2.hoverable{
+  color: #FFF8F0;
+}
+.work{
+  margin-bottom: 5%;
+}
+.about2{
+  margin-bottom: 0%;
+}
+.rodeo{
+  margin-bottom: 2%;
+}
+.rodeo3{
+  margin-bottom: 0%;
+}
+.experience{
+  margin-bottom: 2%;
+}
+.experience2{
+  margin-bottom: 0%;
+}
+.calm{
+  margin-bottom: 2%;
+}
+.heights{
+  margin-bottom: 0%;
+}
+.featured-work{
+  margin-top: 8.5%;
+}
+@media (max-width: 1400px){
+  .featured-work{
+    margin-top: 1.5%;
+  }
+  .footer-links{
+    margin-top:  1%;
+  }
+  .work{
+    margin-bottom: 3%;
+  }
+  .about2{
+    margin-bottom: 1.5%;
+  }
+  .rodeo{
+    margin-bottom: 1%;
+  }
+  .rodeo3{
+    margin-bottom: 0%;
+  }
+  .experience{
+    margin-bottom: 1%;
+  }
+  .experience2{
+    margin-bottom: 0%;
+  }
+  .calm{
+    margin-bottom: 1%;
+  }
+  .heights{
+    margin-bottom: 0%;
+  }
+  .footer-bodycopy3{
+    margin-top: 3%;
+  }
+}
+@media (max-width: 768px){
+  .featured-work{
+    margin-top: 3%;
+  }
+  .footer-links{
+    margin-top: 3%;
+  }
+}
+/* 
+Project Page 
+
+██████  ██████   ██████       ██ ███████  ██████ ████████     ██████   █████   ██████  ███████ 
+██   ██ ██   ██ ██    ██      ██ ██      ██         ██        ██   ██ ██   ██ ██       ██      
+██████  ██████  ██    ██      ██ █████   ██         ██        ██████  ███████ ██   ███ █████   
+██      ██   ██ ██    ██ ██   ██ ██      ██         ██        ██      ██   ██ ██    ██ ██      
+██      ██   ██  ██████   █████  ███████  ██████    ██        ██      ██   ██  ██████  ███████ 
+                                                                                               
+                                                                                               
+                                                                                               
+*/
+  .footer-heading-static2{
+    font-size: 2.6rem;
+  }
+  .footer-bodycopy3{
+    font-size: 1.2rem;
+  }
+   .footer-bodycopy22{
+    font-size: 1.57rem!important;
+  }
+   .footer-bodycopy2{
+    font-size: 1.57rem!important;
+  }
+  .footer-social-icons i {
+  font-size: 67px; /* adjust size here */
+}
+.contact-info{
+  margin-top: 4.5%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+.bottomMenu a{
+  font-size: 1rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  color: #FFF8F0!important;
+  background-color: transparent!important;
+  text-decoration: none;
+}
+.fineprint{
+  text-align: left!important;
+  margin-bottom: 4.3%!important;
+}
+.global-footer{
+  margin-left: 0%!important;
+padding-left: 2.5%!important;
+padding-right: 2.5%!important;
+margin-top: 0%!important;
+padding-top: 2%!important;
+  line-height: 1;
+  height: auto !important;  /* override fixed heights */
+  min-height: 0 !important;
+}
+.footer-links{
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+.work{
+    margin-top: 3.3%!important;
+  margin-bottom: 0!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+.about2{
+    margin-top: 3.3%!important;
+  margin-bottom: 4%!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+  .global-footer {
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+}
+/* Initial state: footer hidden and shifted down */
+#footer {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When visible: slide up and fade in */
+#footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+* body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bold {
+  font-weight: bold;
+  font-family: "Quicksand" sans-serif;
+}
+
+.container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out the columns */
+  padding: 0;
+  margin: 0;
+}
+
+.column {
+  flex: 1; /* Allow columns to take equal space */
+  margin: 0 10px; /* Optional: Add some spacing between columns */
+}
+.column.project-overview{
+  padding: 0;
+  margin: 0;
+}
+.project-info {
+  min-width: 1200px; /* Optional: Limit the max width of the project info */
+  margin: 0 auto; /* Center align the project info */
+  padding: 2.5rem 0rem;
+}
+
+.project-overview, .project-details {
+  padding: 10px; /* Optional: Add padding to columns */
+}
+
+.link-orange {
+  background: none;             /* Remove background */
+  border: none;                 /* Remove border */
+  color: #E6693D;                /* Set text color to orange */
+  font-size: 1.5rem;
+  font-family: "Quicksand," sans-serif;
+  text-decoration: underline;    /* Underline the text */
+  cursor: pointer;              /* Change cursor to pointer */
+  padding: 0;                   /* Remove padding */
+}
+
+.link-orange:hover {
+  color: #000000;            /* Optional: Change color on hover */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #FFF8F0;
+  color: #333333;
+}
+
+header.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem;
+  background-color: transparent!important; /* Example background color */
+}
+
+.logo img {
+  max-width: 8.5rem; /* Adjust as necessary */
+  padding-left: 5%;
+  padding-top: 2%;
+  height: auto;
+}
+.branding-navigation a {
+  color: initial; /* Set initial color, adjust as needed */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+.branding-navigation a:hover {
+  color: #000000; /* Change color to black on hover */
+}
+
+
+nav ul.branding-navigation {
+  display: flex;
+  list-style: none;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+
+nav ul.branding-navigation li {
+  margin-left: 55px; /* Adds space between the navigation items */
+}
+
+nav ul.branding-navigation li a {
+  text-decoration: none;
+  color: #E6693D;
+  font-size: 1.57rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+nav ul.branding-navigation li a:hover {
+  color: #000000; /* Example hover color */
+}
+
+
+.project-wrapper {
+  display: flex; /* Use flexbox for alignment */
+  margin: 0; /* Remove any margin */
+  padding: 0 8vh; /* Adjust padding if necessary */
+}
+
+.project-aside {
+  flex: 0 px; /* Set a fixed width if needed */
+  /* Remove any margin-left or set to zero */
+  margin-left: 0; /* Ensure it has no left margin */
+}
+
+.main {
+  flex-grow: 1; /* Allow the main content to take up remaining space */
+  /* Adjust any margins or paddings */
+}
+
+
+.arrow {
+  padding: 0;
+}
+
+.project-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.project-image {
+  width: 100%;
+  min-height: 50vh;
+  /* TODO: Delete min-height if you want to remove space between project images on project pages on mobile devices. It is used for the demo page only. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.large-emoji-placeholder {
+  font-size: 12rem;
+  /* TODO: Delete this rule. It is only used for making the placeholder emojis large for demo purposes only. */
+}
+
+.text-section {
+  width: 100%;
+}
+
+.project-text {
+  width: 100%;
+  font-size: 3.25rem;
+  padding: 3rem;
+}
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navigation-item {
+  padding: 0 4rem;
+  color: #E6693D;
+}
+
+.navigation-item a {
+  display: flex;
+  align-items: center; /* Center arrow and text */
+  text-decoration: none; /* Remove underline */
+  color: #E6693D; /* Change to your preferred color */
+  font-size: 1.5rem; /* Adjust size as needed */
+  margin-left: 0rem;
+}
+
+.navigation-item a i {
+  margin-left: 0.8rem; /* Space between text and arrow icon */
+  margin-right: 0.8rem;
+}
+
+.navigation-item i {
+  font-size: 2.2rem; /* Adjust this value to make the arrows thinner */
+  font-weight: 600;
+  margin-left: 0;
+  padding-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+/* Style for active navigation link */
+.custom-navigation.active {
+  text-decoration: underline; /* Adds underline */
+  text-decoration-thickness: 2px; /* Adjust thickness if needed */
+  text-underline-offset: 4px; /* Optional: Adjust underline spacing */
+  color: #E6693D; /* Change color if necessary */
+}
+.custom-navigation2.active{
+  text-decoration: underline; /* Adds underline */
+  text-decoration-thickness: 2px; /* Adjust thickness if needed */
+  text-underline-offset: 4px; /* Optional: Adjust underline spacing */
+  color: #E6693D; /* Change color if necessary */
+}
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 3px; /* Adjust the thickness */
+  text-underline-offset: 6px; /* Adjust the offset */
+}
+.menu-item:hover {
+  color: black; /* Change text color on hover */
+  text-decoration-color: black; /* Change underline color on hover */
+  color: black !important
+}
+.close-btn:hover{
+  color: black !important
+}
+.menu-icon:hover{
+  color: black !important
+}
+/* Define the animation */
+@keyframes slideUp {
+  0% {
+      transform: translateY(20px); /* Start 20px below */
+      opacity: 0; /* Start invisible */
+  }
+  100% {
+      transform: translateY(0); /* End at original position */
+      opacity: 1; /* End fully visible */
+  }
+}
+
+/* Apply animation to project images */
+.project-image {
+  animation: slideUp 0.5s ease forwards; /* Animation properties */
+  opacity: 0; /* Set initial opacity to 0 for fade effect */
+  animation-delay: 0s; /* Default delay */
+}
+
+/* Optional: Add a delay for each image for staggered effect */
+.project-image:nth-child(1) {
+  animation-delay: 0.1s; /* First image appears after 0.1s */
+}
+
+.project-image:nth-child(2) {
+  animation-delay: 0.2s; /* Second image appears after 0.2s */
+}
+
+.project-image:nth-child(3) {
+  animation-delay: 0.3s; /* Third image appears after 0.3s */
+}
+
+
+
+
+
+/* Main Project Image Area */
+
+.project-details {
+  width: 100%;
+  padding: 0rem;
+  /* TODO: Delete background-image and the three linear gradient colors to remove the gradient background on the project page. Be careful not to delete the closing } */
+  background-image: linear-gradient(
+    -225deg,
+    var(--linear-gradient-color-1) 0%,
+    var(--linear-gradient-color-2) 50%,
+    var(--linear-gradient-color-3) 100%
+  );
+}
+.project-image {
+  margin-bottom: 1rem; /* Adds space below each image */
+}
+
+.project-image img {
+  display: block; /* Ensures that margin is applied correctly */
+  margin: 0 auto; /* Centers the images if they are in a block context */
+}
+.project-description{
+  margin-bottom: 0rem;
+}
+.column.project-details{
+  margin-top: 1.9rem;
+  margin-left: 0rem;
+  padding-left: 5rem;
+}
+.column.project-overview{
+  margin-right: 1rem;
+}
+.project-image.enlarged img {
+  width: 1600px;  /* Change this to your desired width */
+  height: auto;   /* Maintain aspect ratio */
+  margin-bottom: 2rem; /* Retain margin from your previous styles */
+}
+.project-image img {
+  border-radius: 25px; /* Rounds the corners only */
+}
+.slideshow-container {
+  position: relative;
+  max-width: 800px; /* Set the container width */
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+.project-info2{
+  margin-left: 5.8rem;
+  padding-right: 40rem;
+}
+.project-info3{
+  margin-top: 0.6rem;
+  margin-left: 5.8rem;
+  padding-right: 36rem;
+}
+.project-info4{
+  margin-top: 2rem;
+  margin-left: 5.8rem;
+  padding-right: 40rem;
+}
+.project-title{
+  font-family: "Paytone One", sans-serif; /* Change to any desired font */
+  font-size: 3rem; /* Adjust size as needed */
+  color:#E6693D; /* A different color, like a vibrant orange */
+}
+.project-category{
+  font-family: "Quicksand", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.secondary-title{
+  font-family: "Paytone One", sans-serif;
+  font-size: 2rem;
+  padding-top: 2vh;
+  color: #E6693D;
+
+}
+.project-description{
+  padding-top: 0.5vh;
+}
+.description{
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.57rem;
+  font-weight: 400;
+  color: #000000
+}
+.newimage-container {
+  position: relative;
+  overflow: hidden; /* Ensures the overlay doesn't extend outside the image */
+  padding: 0 5%;
+  padding-bottom: 5%;
+}
+
+.newimage-container img {
+  display: block; /* Removes the bottom space/gap */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.newimage-container img {
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove any inline-block space */
+  max-width: 100%; /* Ensure the image doesn’t overflow its container */
+}
+.seefreshhero-headline-wrapper {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+.freshhero-headline-wrapper {
+  padding-bottom: 30px !important;
+}
+.seefreshproject-title{
+  font-family: "Quicksand", sans-serif;
+  font-size: 2rem;
+  color: #E6693D;
+  font-weight: 400;
+  text-align: left;
+  line-height: 2rem;
+  padding-left: 5%;
+  padding-right: 7%;
+}
+.freshproject-title{
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.57rem;
+  font-weight: 400;
+  text-align: left;
+  line-height: 2rem;
+  padding-left: 5%;
+  padding-right: 7%;
+}
+.seefreshproject-titleoverview {
+  font-family: "Paytone One", sans-serif;
+  font-size: 3rem;
+  color: #E6693D;
+  text-align: left;
+  padding-bottom: 1.2rem;
+  padding-left: 5%;
+  padding-right: 7%;
+}
+.freshproject-titleoverview{
+  font-family: "Paytone One", sans-serif;
+  font-size: 2rem;
+  color: #E6693D;
+  text-align: left;
+  padding-bottom: 0.5rem;
+  padding-left: 5%;
+  padding-right: 7%;
+}
+/* Adjust the border radius for smaller screens */
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+  .seefreshproject-titleoverview{
+    font-size: 2rem;
+    padding-bottom: 0.3rem;
+  }
+  .freshproject-titleoverview{
+    font-size: 1.7rem;
+    padding-bottom: 0.5rem;
+  }
+  .seefreshproject-title{
+    font-size: 1.4rem;
+  }
+  .freshproject-title{
+    font-size: 1.3rem;
+    padding-bottom: 0.2rem;
+    line-height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .seefreshproject-titleoverview{
+    font-size: 2rem;
+  }
+  .freshproject-titleoverview{
+    font-size: 1.7rem;
+    padding-bottom: 0.5rem;
+  }
+  .seefreshproject-title{
+    font-size: 1.4rem;
+  }
+  .freshproject-title{
+    font-size: 1.3rem;
+    padding-bottom: 0.2rem;
+    line-height: 1.6rem;
+  }
+}  
+.page-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-button {
+  margin-top: 0%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  font-size: 1.3rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  color: #E6693D;
+  background-color: #fff8F0; /* Match your theme color */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  text-align: right
+}
+@media (min-width: 768px) {
+  .page-button {
+    margin-top: 0%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    font-size: 2rem;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    color: #E6693D;
+    background-color: #fff8F0; /* Match your theme color */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+}
+
+
+/* 
+
+██   ██  ██████  ██      ██████  ██ ███    ██  ██████  
+██   ██ ██    ██ ██      ██   ██ ██ ████   ██ ██       
+███████ ██    ██ ██      ██   ██ ██ ██ ██  ██ ██   ███ 
+██   ██ ██    ██ ██      ██   ██ ██ ██  ██ ██ ██    ██ 
+██   ██  ██████  ███████ ██████  ██ ██   ████  ██████  
+                                                       
+*/
+
+.holding-page-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  place-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  /* TODO: Delete the following if you do not want a grainy gradient background on index.html. Be careful not to delete the closing } */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1), var(--background-color-holding-page)), url(/assets/temp/noise.svg);
+  /* For more on grainy gradients see https://grainy-gradients.vercel.app/ */
+}
+
+.holding-page-animation {
+  margin-bottom: 1rem;
+}
+
+.holding-page-title {
+  font-size: 1.5rem;
+  color: var(--holding-page-title-color);
+}
+
+.holding-page-footer {
+  display: grid;
+  place-items: center;
+  min-height: 10vh;
+  width: 100%;
+}
+
+.holding-page-copyright {
+  font-size: 0.8rem;
+  color: var(--holding-page-footer-color);
+  margin-bottom: 0;
+}
+
+/*
+███████ ██████  ██████   ██████  ██████  
+██      ██   ██ ██   ██ ██    ██ ██   ██ 
+█████   ██████  ██████  ██    ██ ██████  
+██      ██   ██ ██   ██ ██    ██ ██   ██ 
+███████ ██   ██ ██   ██  ██████  ██   ██ 
+*/
+
+/* TODO: Customize your 404 Error Page */
+
+/* The best 404 pages have become an art in themselves. Your 404 error page is an opportunity to make a memorable impression on your visitors when they don’t land exactly where they hoped. */
+
+/*
+
+██████  ██       █████  ██    ██ 
+██   ██ ██      ██   ██  ██  ██  
+██████  ██      ███████   ████   
+██      ██      ██   ██    ██    
+██      ███████ ██   ██    ██    
+*/
+
+.play-page {
+  display: grid;
+  place-items: center;
+}
+
+.play-page-inner-container {
+  text-align: center;
+}
+
+.play-page-title {
+  color: var(--accent-color);
+}
+
+/*
+
+███    ███ ███████ ██████  ██  █████       ██████  ██    ██ ███████ ██████  ██ ███████ ███████ 
+████  ████ ██      ██   ██ ██ ██   ██     ██    ██ ██    ██ ██      ██   ██ ██ ██      ██      
+██ ████ ██ █████   ██   ██ ██ ███████     ██    ██ ██    ██ █████   ██████  ██ █████   ███████ 
+██  ██  ██ ██      ██   ██ ██ ██   ██     ██ ▄▄ ██ ██    ██ ██      ██   ██ ██ ██           ██ 
+██      ██ ███████ ██████  ██ ██   ██      ██████   ██████  ███████ ██   ██ ██ ███████ ███████ 
+
+/* Default styles for small devices */
+@media (min-width: 200px) {
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    width: 100%;
+  }
+  .overlay-text{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .additional-text{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.57rem;
+    margin-top: 0.55rem;
+  }
+.hero-headline-wrapper{
+padding-left: 2rem;
+padding-right: 2rem;
+margin-left: 0rem;
+padding-bottom: 0rem;
+margin-bottom: 0rem;
+}
+.work-wrapper{
+  padding: 0 0rem;
+  margin-top: 0rem;
+}
+.typewriter{
+  font-size: 2.3rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+  text-align: center;
+  height: 4rem;
+}
+.link-button{
+  font-size: 1.35rem;
+  line-height: 1.7rem;
+  text-align: center;
+}
+.work-page .portfolio .grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Creates 3 equal-width columns */
+  gap: 20px; /* Adds space between grid items */
+}
+.grid{
+  padding: 0 0;
+}
+}
+@media (min-width: 400px) {
+  .hero-headline-wrapper{
+padding: 0 0rem;
+  }
+.grid{
+    padding: 0 0rem;
+  }
+.typewriter{
+  font-size: 3.3rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+  text-align: center;
+  height: 4.6rem;
+}
+.link-button{
+  font-size: 1.5rem;
+}
+.link-button{
+  font-size: 1.5rem;
+  line-height: 1.85rem;
+  text-align: center;
+}
+}
+@media (min-width: 768px) {
+
+  .overlay-text{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .additional-text{
+    display: flex;
+    justify-content: center;
+    font-size: 1.57rem;
+    text-align: center;
+    margin-top: 0.55rem;
+  }
+}
+@media (min-width: 600px) {
+  .hero-headline-wrapper{
+padding: 0 0rem;
+  }
+.grid{
+    padding: 0 0rem;
+  }
+.typewriter{
+  font-size: 3.3rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+  text-align: center;
+  height: 4.6rem;
+}
+.link-button{
+  font-size: 1.5rem;
+}
+.link-button{
+  font-size: 1.5rem;
+  line-height: 1.85rem;
+  text-align: center;
+}
+}
+/* Typewriting animation for h3 on mobile devices */
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .link-button{
+    font-size: 1.5rem;
+  }
+
+  .typewriter{
+    font-size: 3.3rem;
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+    text-align: center;
+    height: 4.6rem;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 1400px) {
+  .overlay-text {
+    color: #FFF8F0; /* Text color */
+    font-size: 2.6rem; /* Adjust size as needed */
+    font-family: "Paytone One", sans-serif;
+    text-align: center; /* Center the text */
+   
+  }
+  .additional-text {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.57rem; /* Adjust font size as needed */
+    color: #E6693D; /* Change color as desired */
+    margin-top:0.75rem; /* Space between the overlay text and additional text */
+    text-align: center;
+    
+  }
+  .work-page .portfolio .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 3 equal-width columns */
+    gap: 30px; /* Adds space between grid items */
+  }
+  .holding-page-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 4.4rem;
+    margin-bottom: 0.6rem;
+  }
+  .link-button{
+    font-size: 1.5rem;
+  }
+ 
+
+  h4 {
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.1;
+  }
+
+  h5 {
+    font-size: 27px;
+  }
+
+  .logo {
+    width: 20rem;
+  }
+
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero-headline-wrapper {
+    padding: 4rem 8rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  /* Grayscale filter with full-colour on hover and tap */
+  .work-page-grid-item a.grayscale img {
+    filter: grayscale(100%);
+  }
+
+  .work-page-grid-item > a.grayscale:active img,
+  .work-page-grid-item > a.grayscale:hover img {
+    filter: grayscale(0);
+  }
+
+  .about {
+    padding: 4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .global-footer {
+    padding: 4rem 4rem 0 4rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-item-1,
+  .footer-item-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .about-item-2,
+  .footer-item-2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
+
+  .about-item-3,
+  .footer-item-3 {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+  }
+
+  .about-item-4,
+  .footer-item-4 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 4;
+    text-align: center;
+    align-self: end;
+  }
+
+  /* Padding around work grid and project page */
+
+  /* Project Page Flex Direction on Large Devices */
+  .project-wrapper {
+    flex-direction: column;
+  }
+
+  /* Sidebar on Large Devices */
+  .project-aside {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  /* Main Project Image Area on Large Devices */
+  .project-details {
+    width: 100%;
+  }
+
+  .project-image-container {
+    flex-direction: row;
+  }
+
+  .project-navigation {
+    justify-content: flex-start;
+  }
+
+  .arrow {
+    padding-right: 1rem;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1400px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .work-page .portfolio .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 3 equal-width columns */
+    gap: 20px; /* Adds space between grid items */
+  }
+.typewriter{
+  font-size: 4rem;
+  height: 4.95rem;
+}
+.link-button{
+  font-size: 1.5rem;
+}
+
+}
+
+@media (min-width: 900px) {
+  .global-footer{
+    padding-top: 4%;
+    padding-left: 4%;
+    padding-right: 4%
+
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.5rem;
+  }
+ 
+}
+@media (min-width: 950px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.5rem;
+  }
+ 
+}
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+ 
+}
+@media (min-width: 1230px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+ 
+}
+@media (min-width: 1250px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+ 
+}
+@media (min-width: 1300px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+}
+@media (min-width: 1320px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+ 
+}
+@media (min-width: 1370px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+
+}
+@media (min-width: 1380px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+ 
+}
+@media (min-width: 1410px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+ 
+}
+@media (min-width: 1450px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+ 
+}
+@media (min-width: 1460px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+
+
+}
+@media (min-width: 1470px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+ 
+}
+@media (min-width: 1500px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+
+}
+@media (min-width: 1550px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+
+}
+@media (min-width: 1600px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+
+}
+@media (min-width: 1650px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+ 
+}
+@media (min-width: 1670px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+
+}
+@media (min-width: 1680px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+
+}
+
+@media (min-width: 1700px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+  .link-button{
+    font-size: 1.57rem;
+  }
+
+}
+/* XXX-Large devices (larger desktops, 1500px and up) */
+@media (min-width: 1750px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+.link-button{
+  font-size: 1.57rem;
+}
+ 
+}
+@media (min-width: 768px) {
+  /* Hide mobile nav on larger screens */
+  .menu-icon {
+      display: none; /* Hide mobile menu */
+  }
+
+}
+
+@media (max-width: 767px) {
+  /* Hide desktop nav on smaller screens */
+  .desktop {
+      display: none; /* Hide desktop menu */
+  }
+  .menu-item2{
+    text-decoration: underline;
+  }
+}
+.image-container2 {
+  position: absolute; /* Fill the entire screen */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container2 img {
+  width: 100%; /* Cover the container */
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.image-container2 {
+  z-index: -1; /* Place it behind other content */
+}
+.image-container2 img {
+  display: block; /* Removes the bottom space/gap */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}  
+.overlay2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); /* Black background with transparency */
+  display: flex; /* Center text */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for overlay */
+}
+
+.image-container2:hover .overlay2{
+  opacity: 1; /* Show overlay on hover */
+}
+
+.image-container2:hover img {
+  opacity: 0.75; /* Darken image on hover */
+}
+
+.overlay-text2{
+  color: #FFF8F0; /* Text color */
+  font-size: 3rem; /* Adjust size as needed */
+  font-family: "Paytone One", sans-serif;
+  text-align: center; /* Center the text */
+ 
+}
+.additional-text2{
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.57rem; /* Adjust font size as needed */
+  color: #E6693D; /* Change color as desired */
+  margin-top:0.75rem; /* Space between the overlay text and additional text */
+  text-align: center;
+  
+}
+
+
+/* INDEX CODE */
+
+.introimage-container {
+  position: relative;
+  overflow: hidden; /* Ensures the overlay doesn't extend outside the image */
+  border-radius: 0px;
+  object-fit: cover;
+}
+.introoverlay{
+  border-radius: 0px!important
+}
+.introimage-container img {
+  display: block; /* Removes the bottom space/gap */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  border-radius: 0px!important
+}
+
+  
+.introoverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); /* Black background with transparency */
+  display: flex; /* Center text */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  opacity: 0; /* Initially hidden */
+  border-radius: 0px!important;
+  transition: opacity 0.3s ease; /* Smooth transition for overlay */
+}
+
+.introimage-container:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.introimage-container:hover img {
+  opacity: 0.75; /* Darken image on hover */
+}
+
+.introoverlay-text {
+  color: #FFF8F0; /* Text color */
+  font-size: 2.6rem; /* Adjust size as needed */
+  font-family: "Paytone One", sans-serif;
+  text-align: center; /* Center the text */
+ 
+}
+.introadditional-text {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.57rem; /* Adjust font size as needed */
+  color: #E6693D; /* Change color as desired */
+  margin-top:0.75rem; /* Space between the overlay text and additional text */
+  text-align: center;
+  
+}
+.work-wrapper2{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.grid2{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.introimage-container img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Ensures the image maintains its aspect ratio */
+}
+.newimage-container-row {
+  display: flex;
+  gap: 20px; /* Optional: adds space between the images */
+  justify-content: center; /* Optional: centers the images */
+}
+
+
+

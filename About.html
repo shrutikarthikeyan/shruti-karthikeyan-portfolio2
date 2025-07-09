@@ -1,0 +1,1453 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="assets/branding-images/shruti-karthikeyan-favicon.svg">
+<head>
+  <title>Shruti Karthikeyan | Designer and Illustrator | Illustration Page</title>
+  <meta name="description"
+    content="When writing a meta description, keep it between 140 and 160 characters so Google can display your entire message. Don’t forget to include your keyword!">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="screenshot.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <script src="https://kit.fontawesome.com/d300c2ea15.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles/style.css">
+  <style>
+    /* Add styles for transition effect */
+    * {
+      transition: color 0.5s ease, background-color 0.5s ease;
+    }
+  </style>
+  <style>
+        /* Initial styling for the logo image */
+        .logo img {
+            transition: opacity 1s ease-in-out; /* Add a smooth fade transition */
+            opacity: 1; /* Make sure the logo starts visible */
+        }
+    </style>
+  <style>
+    .fade-slide {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+  .global-footer {
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+}
+
+     hr.divider {
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 0;
+    border: none;
+    max-width:1000px;
+    border-top: 1.5px solid #000000;
+    width: 200%;
+    margin-left: 0%;
+    margin-right: 0%;
+    opacity: 1;
+    
+  }
+  .centered-divider {
+  margin: auto;          /* centers the divider */
+  border: none;
+  border-top: 1.5px solid #000; /* thickness and color of line */
+  width: 95%;                 /* adjust width as needed */               /* optional for a lighter look */
+  padding-bottom: 10px;
+}
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        position: relative;
+        padding: 20px;
+        background-color: #333; /* Optional background for the header */
+        color: #E6693D; /* Optional text color for the header */
+    }
+
+    .menu-icon {
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .menu-overlay {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #FFF8F0;
+        z-index: 1000; /* Sit on top */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color:#E6693D;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 400;
+        font-size: 45px;
+        text-decoration: underline;
+        margin-top: 0;
+        padding-top: 0;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 6px; /* Adjust this value to create space above the underline */
+        
+    }
+
+    .menu-item {
+        color:#E6693D;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 400;
+        font-size: 45px;
+        text-decoration: none;
+        margin-top: 5rem;
+    }
+    .menu-item.underline {
+    text-decoration: underline; /* Apply underline only for WORK */
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px; /* Space above the underline */
+}
+     .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color:#E6693D;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 400;
+        font-size: 45px;
+        text-decoration: none;
+     }
+     .menu-item:hover {
+    color: black; /* Change text color on hover */
+    text-decoration-color: black; /* Change underline color on hover */
+    color: black;
+}
+.menu:hover {
+    color: black; /* Change color to black on hover */
+}
+
+
+
+
+
+    .close-btn {
+        position: absolute;
+        top: 27px;
+        right: 20px;
+        font-size: 76px;
+        color: #E6693D;
+        cursor: pointer;
+    }
+.section-title{
+  text-align: left;
+}
+#myID {
+  color: #FFF8F0;
+  padding: 0px 0px;
+  border-radius: 0px;
+  text-decoration: none;
+  display: none; /* Initially hidden */
+  z-index: 1000;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  font-size: 1rem;
+  font-family: "Quicksand", sans-serif!important;
+  background: transparent
+  
+}
+
+#myID.show {
+  display: block;
+}
+
+    /* Add your additional styles here */
+</style>
+</head>
+<body id="top">
+
+</head>
+
+<body class="work-page">
+   <div class="cursor">
+  <span class="cursor-text">View Project</span>
+</div>
+  <header class="hero-header">
+    <div class="logo">
+      <a href="index.html">
+        <img id="logo" src="assets/branding-images/logo-orange.svg" alt="Shruti Karthikeyan Logo">
+      </a>
+    </div>
+    <nav class="navbar">
+      <div class="menu-icon" id="menu-icon">&#9776;</div> <!-- Menu Icon -->
+      <div class="menu-overlay" id="menu-overlay">
+        <div class="close-btn" id="close-btn">&times;</div> <!-- Close Button -->
+        <nav class="menu">
+            <a href="work-clean.html" class="menu-item">WORK</a>
+            <a href="illustration.html" class="menu-item">ILLUSTRATION</a>
+            <a href="about.html" class="menu-item underline">ABOUT</a>
+        </nav>
+    </div>
+      <div class="nav-container desktop">
+      <ul class="branding-navigation">
+        <li><a href="work-clean.html" class="custom-navigation">WORK</a></li>
+        <li><a href="illustration.html" class="custom-navigation">ILLUSTRATION</a></li>
+        <li><a href="about.html" class="custom-navigation active">ABOUT</a></li>
+        
+      </ul>
+      </div>
+    </div>
+    </nav>
+  </header>
+
+<style>
+  .a{
+    font-weight: bold;
+  }
+  .button-group {
+  display: flex;
+  gap: 30px 20px;
+  flex-wrap: wrap;
+  font-weight: bold;
+  padding-left: 0%;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.btn {
+  background-color: #FFF8F0; /* your orange brand color */
+  color: black!important;
+  padding: 18px 25px;
+  border-radius: 40px;
+   border: 1.5px solid black;
+  text-decoration: none!important;
+  font-weight: 600!important;
+  letter-spacing: 0.5px;     /* NEW */
+  font-family: "Quicksand", sans-serif!important;
+  font-size: 1.2rem!important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #000000; /* slightly darker orange on hover */
+  color: #FFF8F0!important
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+}
+
+  .content-wrapper {
+    display:flex;
+    flex-direction: row; /* Ensures image is on the left */
+    align-items: flex-start;
+    padding-left: 0px;
+    padding-right: 0;
+    gap: 7%;
+    max-width: 1200px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 50px;
+  }
+   .content-wrapper2 {
+    display:flex;
+    flex-direction: row; /* Ensures image is on the left */
+    align-items: flex-start;
+    padding: 0px;
+    gap: 7%;
+    max-width: 1200px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 0;
+  }
+  .content-wrapper3 {
+    display:flex;
+    flex-direction: row; /* Ensures image is on the left */
+    align-items: flex-start;
+    padding: 0px;
+    gap: 7%;
+    max-width: 1200px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 30px;
+    padding-left: 0;
+  }
+  .image-column {
+    flex: 1;
+    padding-top: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0%;
+  }
+
+  .image-column img {
+    width: 100%;
+    height: auto;
+    max-width: 460px;
+    border-radius: 12px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .text-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 0;
+    padding-right: 0%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .aboutproject-title2 {
+    font-size: 3rem;
+    margin-bottom: 0px;
+    color: #E6693D;
+    padding-left: 0;
+  }
+.aboutproject-title6 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 6%;
+    margin-bottom: 20px;
+    padding-left: 0%;
+    color: #000000;
+    text-align: left;
+    margin-left: 0;
+  }
+  .aboutproject-title16 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 6%;
+    margin-bottom: 20px;
+    padding-left: 0%;
+    color: #000000;
+    text-align: left;
+    margin-left: 0;
+  }
+  .aboutproject-title9 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 6%;
+    margin-bottom: 20px;
+    padding-left: 0%;
+    color: #000000;
+    text-align: left;
+    margin-left: 0;
+  }
+    .aboutproject-title19 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 6%;
+    margin-bottom: 20px;
+    padding-left: 0%;
+    color: #000000;
+    text-align: left;
+    margin-left: 0;
+  }
+  .aboutproject-title7{
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+    line-height: 1.5;
+      padding-left: 0%;
+      padding-right: 0%;
+    text-align: left;
+    margin-left: 0;
+  }
+  .aboutproject-title17{
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+      padding-left: 0%;
+      padding-right: 0%;
+    text-align: left;
+    margin-left: 0;
+  }
+    .aboutproject-title8{
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+    line-height: 1.5;
+      padding-left: 0%;
+      padding-right: 0;
+    text-align: left;
+    margin-left: 0;
+  }
+  .aboutproject-title {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    padding-top: 0;
+    line-height: 1.5;
+    padding-left: 0;
+  }
+  @media (max-width: 1030px) {
+ .aboutproject-title2 {
+    font-size: 2rem;
+    margin-top: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 30px;
+    color: #E6693D;
+    padding-left: 0;
+  }
+.aboutproject-title6 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-bottom: 10px;
+    padding-left: 0%;
+    color: #000000;
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .aboutproject-title16 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-bottom: 10px;
+    padding-left: 0%;
+    color: #000000;
+    text-align: left;
+    margin-left: 0;
+  }
+  .aboutproject-title9 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 3%;
+    margin-bottom: 10px;
+    padding-left: 0%;
+    color: #000000;
+    text-align: left;
+    margin-left: 0;
+  }
+    .aboutproject-title19 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-bottom: 10px;
+    padding-left: 0%;
+    color: #000000;
+    text-align: left;
+    margin-left: 0;
+  }
+  .aboutproject-title7{
+    font-size: 1rem;
+    margin-bottom: 0px;
+    line-height: 1.4;
+      padding-left: 0%;
+      padding-right: 0%;
+    text-align: left;
+    margin-left: 0;
+  }
+  .aboutproject-title17{
+    font-size: 1rem;
+    margin-bottom: 7.5px;
+    line-height: 1.4;
+      padding-left: 0%;
+      padding-right: 0%;
+    text-align: left;
+    margin-left: 0;
+  }
+    .aboutproject-title8{
+    font-size: 1rem;
+    margin-bottom: 0px;
+    line-height: 1.4;
+      padding-left: 0%;
+      padding-right: 0;
+    text-align: left;
+    margin-left: 0;
+  }
+  .aboutproject-title {
+    font-size: 1rem;
+    margin-bottom: 0px;
+    line-height: 1.4;
+    padding-left: 0;
+  }
+.button-group {
+  display: flex;
+  gap: 30px 20px;
+  flex-wrap: wrap;
+  padding-left: 0%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+}
+
+.btn {
+  background-color: #FFF8F0; /* your orange brand color */
+  color: black!important;
+  padding: 15px 20px;
+  border-radius: 40px;
+   border: 1.5px solid black;
+  text-decoration: none;
+  font-weight: 600!important;
+  font-family: "Quicksand", sans-serif!important;
+  font-size: 1rem!important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #000000; /* slightly darker orange on hover */
+  color: #FFF8F0!important
+}
+  }
+  @media (max-width: 1030px) {
+    .content-wrapper {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+.content-wrapper2 {
+      flex-direction: column;
+      align-items: left;
+      text-align: left;
+    }
+    .content-wrapper3 {
+      flex-direction: column;
+      align-items: left;
+      text-align: left;
+    }
+    .text-column,
+    .image-column {
+      flex: none;
+      width: 100%;
+    }
+
+    .image-column img {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 1030px) {
+  .global-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 15%!important;
+    padding-left: 0px;
+    gap: 0px;
+    border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  }
+.footer-links{
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+.work{
+    margin-top: 0%!important;
+  margin-bottom: 0!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+.about2{
+    margin-top: 2%!important;
+  margin-bottom: 0%!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+  .footer-item {
+    width: 100%;
+    text-align: left;
+  }
+
+  .footer-left,
+  .footer-right,
+  .footer-item-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+.footer-heading-static2{
+font-size: 2rem!important;
+}
+.footer-bodycopy{
+font-size: 1.5rem!important;
+}
+ 
+  .footer-bodycopy2,
+  .footer-bodycopy22 {
+    font-size: 1rem!important;
+  }
+.footer-bodycopy2{
+  margin-top: 0!important;
+  padding-top: 0!important;
+}
+.about2{
+  margin-top: 0!important;
+  padding-top: 0!important;
+  margin-bottom: 0!important;
+  padding-bottom: 0!important;
+}
+.work{
+  margin-top: 0!important;
+  padding-top: 0!important;
+  margin-bottom: 0!important;
+  padding-bottom: 0!important;
+}
+.footer-bodycopy22{
+  margin-top: 0!important;
+  padding-top: 0!important;
+  margin-bottom: 0!important;
+  padding-bottom: 0!important;
+}
+  .social-icons {
+    margin-top: 0px;
+    gap: 14px;
+  }
+
+ .bottomMenu {
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    margin-bottom: 4%;
+  }
+.bottomMenu a{
+  font-size: 1rem!important;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 800;
+  color: #FFF8F0!important;
+  background-color: transparent!important;
+  text-decoration: none;
+}
+.fineprint{
+  font-size: 0.9rem!important;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+  margin-bottom: 0;
+  padding-bottom: 0%;
+}
+}
+
+</style>
+
+<div class="content-wrapper fade-slide">
+  <div class="image-column fade-slide">
+    <img src="assets/about/shruti-karthikeyan-brand-designer-self-portrait.jpg" alt="Shruti Karthikeyan self portrait" class="hero-image">
+    
+  </div>
+  <div class="text-column fade-slide">
+    <h1 class="aboutproject-title2">Hello!</h1>
+    <h3 class="aboutproject-title">I am Shruti Karthikeyan, a graphic designer and illustrator based in Vancouver, BC and born in Salem, Tamil Nadu. I recently graduated with a Bachelor of Design in Visual Communication from the IDEA School of Design at Capilano University, North Vancouver, BC.</h3>
+    <h3 class="aboutproject-title">What I love most about design is the sweet spot it strikes between problem-solving and creativity. I craft visuals that don’t just look beautiful, they work (function + aesthetics). Whether it’s bringing a luxury product to life through packaging, enhancing a brand’s digital presence with a seamless e-commerce website, or designing campaigns that rally a whole community, I approach every project with strategic clarity and emotional connection.</h3>
+    <h3 class="aboutproject-title">Outside of design, I love photography and video editing. If I’m not sketching at a café with my iPad, I’m likely behind a camera capturing the world around me. I also recharge through hiking, kayaking, traveling, and the occasional thrill of an amusement park visit.</h3>
+
+    <!-- Buttons container -->
+  <div class="button-group fade-slide" style="margin-top: 30px;">
+    <a href="assets/about/ShrutiKarthikeyan_Resume.pdf" target="_blank" class="btn">Resume</a>
+    <a href="mailto:shrutikarthikeyan.creative@gmail.com" class="btn">Email</a>
+    <a href="https://www.linkedin.com/in/shrutikarthikeyan/" target="_blank" class="btn">LinkedIn</a>
+  </div>
+  
+    </div>
+</div>
+<hr class="centered-divider fade-slide">
+<div class="content-wrapper fade-slide">
+    <div class="text-column fade-slide">
+       <h3 class="aboutproject-title6">My Services</h3>
+       <h3 class="aboutproject-title7">• Brand Identity Design</h3>
+       <h3 class="aboutproject-title7">• Packaging Design</h3>
+       <h3 class="aboutproject-title7">• UI/UX Design</h3>
+       <h3 class="aboutproject-title7">• Mural Art & Custom Illustration</h3>
+       <h3 class="aboutproject-title7">• Marketing & Promotional Design</h3>
+       <h3 class="aboutproject-title7">• Motion Design</h3>
+      </div>
+    <div class="text-column fade-slide">
+       <h3 class="aboutproject-title9">Education</h3>
+       <h3 class="aboutproject-title8">Bachelor of Design in Visual Communication</h3>
+       <h3 class="aboutproject-title8">IDEA School of Design, Capilano University</h3>
+        <h3 class="aboutproject-title8">2021-2025</h3>
+            
+    </div>
+</div>
+<div class="content-wrapper3 fade-slide">
+    <div class="text-column">
+       <h3 class="aboutproject-title16">Experience</h3>
+       <h3 class="aboutproject-title7">Visual & UI Designer, Cocoa Passion Artisanal Chocolates</h3>
+       <h3 class="aboutproject-title17">February 2025 - May 2025</h3>
+       <h3 class="aboutproject-title7">Digital & Marketing Design Assistant, Burnaby Heights</h3>
+       <h3 class="aboutproject-title17">May 2024 - September 2024</h3>
+       <h3 class="aboutproject-title7">Contributing Illustrator, Capilano Courier</h3>
+       <h3 class="aboutproject-title17">September 2022 - Present</h3>
+      </div>
+    <div class="text-column">
+       <h3 class="aboutproject-title19">Awards</h3>
+       <h3 class="aboutproject-title8">Capic Rodeo 16 2nd Place Illustration 2024</h3>
+       <h3 class="aboutproject-title8">Capic Rodeo 16 Top 10 Illustration 2024</h3>
+            <h3 class="aboutproject-title8">Capic Rodeo 16 Top 10 Illustration 2024</h3>
+<h3 class="aboutproject-title8">Dean's List x 8, Merit's List x 2</h3>
+           
+    </div>
+</div>
+<hr class="centered-divider fade-slide">
+
+
+<style>
+  .cursor {
+  
+  pointer-events: none!important; /* <--- This is key */
+  z-index: 9999; /* ensure it's above iframe */
+
+}
+.cursor-text {
+  pointer-events: none!important;
+}
+
+.ripple {
+  pointer-events: none!important;
+}
+
+/* Add this CSS: */
+.cursor {
+  pointer-events: none; /* Ensure cursor never blocks mouse events */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s, border-color 0.3s, width 0.3s, height 0.3s;
+  z-index: 9999; /* on top but not blocking */
+}
+
+
+    .aboutproject-title66 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 37px;
+    margin-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0%;
+    color: #000000!important;
+    text-align: left;
+    margin-left: 0;
+  }
+  .aboutproject-title22{
+     
+    font-size: 3rem;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: black!important;
+    padding-left: 0;
+     font-family: "Paytone One", sans-serif;
+  
+  }
+    .aboutproject-title23{
+     
+    font-size: 3rem;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+    margin-top:  33px;
+    margin-bottom: 0;
+    color: black!important;
+    padding-left: 0;
+     font-family: "Paytone One", sans-serif;
+  
+  }
+  .aboutproject-title6{
+color: black!important;
+  }
+  .freelance-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: "Quicksand", sans-serif;
+}
+
+.freelance-form input[type="text"],
+.freelance-form input[type="email"] {
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid #000;
+  background-color: transparent;
+  font-size: 1.2rem;
+  font-family: "Quicksand", sans-serif!important;
+  font-weight: 400;
+  color: #444;
+  outline: none;
+}
+
+.freelance-form input::placeholder {
+  color: #999;
+  font-family: "Quicksand", sans-serif!important;
+  font-weight: 400;
+  font-style: italic;
+  padding-top: 0;
+  margin-top: 0px;
+}
+
+.freelance-form button {
+  background-color: #000;
+  color: #FFF8F0;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.freelance-form button:hover {
+  background-color: #333;
+}
+
+ .video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: 2.5%;
+  padding-bottom: 3%;
+  z-index: 1;
+}
+
+.video-overlay {
+  pointer-events: none;
+  position: absolute; /* usually overlays are absolutely positioned */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* keep any visual styles */
+}
+
+</style>
+
+<div class="video-container fade-slide">
+  <iframe
+    src="https://www.youtube.com/embed/5uWh7WGRKJA?si=LitNKp-Wz9Jkbx-L"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+  <div class="video-overlay"></div>
+</div>
+
+
+</div>
+
+
+
+
+
+</main>
+<style>
+  .footer-heading-static2{
+    font-size: 3rem;
+  }
+  .footer-bodycopy3{
+    font-size: 1.2rem;
+  }
+   .footer-bodycopy22{
+    font-size: 1.5rem!important;
+  }
+   .footer-bodycopy2{
+    font-size: 1.5rem!important;
+  }
+  .footer-social-icons i {
+  font-size: 67px; /* adjust size here */
+}
+.contact-info{
+  margin-top: 4.5%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+.bottomMenu a{
+  font-size: 1rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  color: #FFF8F0!important;
+  background-color: transparent!important;
+  text-decoration: none;
+}
+.fineprint{
+  text-align: left!important;
+  margin-bottom: 4.3%!important;
+}
+.global-footer{
+  margin-left: 0%!important;
+padding-left: 2.5%!important;
+padding-right: 2.5%!important;
+margin-top: 0%!important;
+padding-top: 2%!important;
+  line-height: 1;
+  height: auto !important;  /* override fixed heights */
+  min-height: 0 !important;
+}
+.footer-links{
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+.work{
+    margin-top: 3.3%!important;
+  margin-bottom: 0!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+.about2{
+    margin-top: 3.3%!important;
+  margin-bottom: 4%!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+</style>
+<ul class="global-footer" id="footer">
+  <!-- Left Column -->
+  <li class="footer-item footer-left">
+    <p class="footer-heading-static2">Like what you see?</p>
+    <a href="mailto:shrutikarthikeyan.creative@gmail.com" target="_blank" class="footer-bodycopy">
+    shrutikarthikeyan.creative@gmail.com
+    </a>
+
+    <!-- Contact Info and Social Media -->
+    <div class="contact-info">
+      <div class="social-icons footer-social-icons">
+        <a href="https://www.instagram.com/shrutikarthikeyan/?hl=en" target="_blank" class="icon-link2">
+          <i class="fab fa-instagram fa-sm"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/shruti-karthikeyan-57b47023b/" target="_blank" class="icon-link2">
+          <i class="fab fa-linkedin fa-sm"></i>
+        </a>
+        <a href="https://www.behance.net/shrutikarthikeyan" target="_blank" class="icon-link2">
+          <i class="fab fa-behance fa-sm"></i>
+        </a>
+      </div>
+    </div>
+  </li>
+
+  <!-- Right Column -->
+  <li class="footer-item footer-right">
+    <div class="footer-links">
+      <div class="work">
+        <a href="work-clean.html" class="footer-bodycopy2 hoverable">WORK</a>
+      </div>
+      <div class="work">
+        <a href="illustration.html" class="footer-bodycopy2 hoverable">ILLUSTRATION</a>
+      </div>
+      <div class="about2">
+        <a href="About.html" class="footer-bodycopy22 underline">ABOUT</a>
+      </div>
+    
+    </div>
+  </li>
+
+  <!-- Fine Print -->
+  <li class="footer-item footer-fineprint">
+    <p class="fineprint">&copy; Shruti Karthikeyan 2025. All Rights Reserved.</p>
+  </li>
+</ul>
+
+<!-- Back to Top -->
+<div id="myID" class="bottomMenu">
+  <a href="#top">Back to top ↑</a>
+</div>
+
+<script>
+  const footer = document.getElementById('footer');
+  let isVisible = false;
+
+  window.addEventListener('scroll', () => {
+    const scrollBottom = window.scrollY + window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+
+    if (!isVisible && scrollBottom >= docHeight - 10) {
+      footer.classList.add('visible');
+      isVisible = true;
+    }
+  });
+</script>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cursor = document.querySelector('.cursor');
+    const hoverElements = document.querySelectorAll('.btn, img, .arrow-icon');
+
+    const colors = ['#6593E9', '#99AD33', '#E6693D'];
+    let currentIndex = 0;
+
+    // Cycle colors every 5 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % colors.length;
+    }, 5000);
+
+    // Hover behavior for all targets
+    hoverElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.backgroundColor = colors[currentIndex];
+        cursor.style.borderColor = colors[currentIndex];
+      });
+
+      el.addEventListener('mouseleave', () => {
+        cursor.style.backgroundColor = 'transparent';
+        cursor.style.borderColor = 'black';
+      });
+    });
+
+    // Cursor movement tracking
+    let mouseX = 0, mouseY = 0;
+    let currentX = 0, currentY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animate() {
+      currentX += (mouseX - currentX) * 0.2;
+      currentY += (mouseY - currentY) * 0.2;
+
+      cursor.style.left = currentX + 'px';
+      cursor.style.top = currentY + 'px';
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  });
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const colors = ['#6593E9', '#99AD33', '#E6693D'];
+    const logos = [
+      'assets/branding-images/logo-blue.svg',
+      'assets/branding-images/logo-green.svg',
+      'assets/branding-images/logo-orange.svg'
+    ];
+
+    const elements = document.querySelectorAll(
+      'body *:not(.testimonial):not(.footer-heading-static):not(.footer-heading-static2):not(.footer-heading-static3):not(.no-color-change):not(h3):not(.footer-bodycopy):not(.footer-bodycopy2):not(.footer-bodycopy22):not(.footer-bodycopy4):not(.footer-bodycopy5):not(.fineprint):not(.footer-bodycopy3):not(.overlay-text):not(.footer-social-icons *)'
+    );
+    const footer = document.getElementById("footer");
+    const logoElement = document.getElementById("logo");
+
+    const cursor = document.querySelector('.cursor');
+    const ripple = document.querySelector('.ripple');
+    const cursorText = document.querySelector('.cursor-text');
+
+    let currentIndex = 0;
+    let mouseX = 0, mouseY = 0;
+    let currentX = 0, currentY = 0;
+
+    function changeTheme() {
+      elements.forEach(el => el.style.color = colors[currentIndex]);
+      if (footer) footer.style.backgroundColor = colors[currentIndex];
+      if (logoElement) logoElement.src = logos[currentIndex];
+      currentIndex = (currentIndex + 1) % colors.length;
+    }
+
+    changeTheme();
+    setInterval(changeTheme, 5000);
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Magnetic cursor effect
+    const magneticDistance = 100;
+    const magneticStrength = 0.15;
+    const projectItems = document.querySelectorAll('.work-page-grid-item');
+
+    let magneticTarget = null;
+    let magneticTargetX = 0;
+    let magneticTargetY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      let closestElement = null;
+      let closestDistance = magneticDistance;
+
+      projectItems.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const elCenterX = rect.left + rect.width / 2;
+        const elCenterY = rect.top + rect.height / 2;
+        const dist = Math.hypot(e.clientX - elCenterX, e.clientY - elCenterY);
+        if (dist < closestDistance) {
+          closestDistance = dist;
+          closestElement = el;
+          magneticTargetX = elCenterX;
+          magneticTargetY = elCenterY;
+        }
+      });
+
+      magneticTarget = closestElement;
+    });
+
+    function animate() {
+      if (magneticTarget) {
+        currentX += (magneticTargetX - currentX) * magneticStrength;
+        currentY += (magneticTargetY - currentY) * magneticStrength;
+      } else {
+        currentX += (mouseX - currentX) * 0.2;
+        currentY += (mouseY - currentY) * 0.2;
+      }
+
+      cursor.style.left = ripple.style.left = currentX + 'px';
+      cursor.style.top = ripple.style.top = currentY + 'px';
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    document.addEventListener('click', () => {
+      ripple.style.animation = 'none';
+      ripple.offsetHeight;
+      ripple.style.animation = 'clickRipple 0.4s ease-out';
+    });
+
+    // Cursor hover interaction only on project items
+    projectItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        cursor.style.width = '100px';
+        cursor.style.height = '100px';
+        cursor.style.backgroundColor = colors[(currentIndex === 0 ? colors.length : currentIndex) - 1];
+        cursor.style.border = 'none';
+        cursorText.textContent = 'View Project';
+        cursorText.style.color = 'black';
+        cursorText.style.opacity = 1;
+      });
+
+      item.addEventListener('mouseleave', () => {
+        cursor.style.width = '30px';
+        cursor.style.height = '30px';
+        cursor.style.backgroundColor = 'transparent';
+        cursor.style.border = '2px solid black';
+        cursorText.textContent = '';
+        cursorText.style.opacity = 0;
+      });
+    });
+  });
+  
+</script>
+<script>
+   function toggleMenu() {
+    const navLinks = document.getElementById("nav-links");
+    navLinks.classList.toggle("show"); // Toggle the show class to display the menu
+}
+</script>
+
+
+
+<script>
+  const menuIcon = document.getElementById('menu-icon');
+  const menuOverlay = document.getElementById('menu-overlay');
+  const closeBtn = document.getElementById('close-btn');
+
+  // Show the menu overlay when the menu icon is clicked
+  menuIcon.addEventListener('click', () => {
+      menuOverlay.style.display = 'flex'; // Use flex to center the content
+  });
+
+  // Hide the menu overlay when the close button is clicked
+  closeBtn.addEventListener('click', () => {
+      menuOverlay.style.display = 'none';
+  });
+
+  // Optional: Hide the menu overlay when clicking outside the menu
+  menuOverlay.addEventListener('click', (event) => {
+      if (event.target === menuOverlay) {
+          menuOverlay.style.display = 'none';
+        }
+      });
+  </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const footer = document.getElementById("footer");
+    const backToTop = document.getElementById("myID");
+
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            backToTop.classList.add("show");
+          } else {
+            backToTop.classList.remove("show");
+          }
+        });
+      },
+      {
+        root: null, // viewport
+        threshold: 0.1 // 10% of footer is visible
+      }
+    );
+
+    if (footer) {
+      observer.observe(footer);
+    }
+  });
+ 
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all fade-slide except right-column-scroll-indicator
+  const fadeSlides = document.querySelectorAll('.fade-slide:not(.right-column-scroll-indicator)');
+  // Select all right-column-scroll-indicator
+  const rightColumnItems = document.querySelectorAll('.right-column-scroll-indicator');
+
+  // IntersectionObserver callback
+  const observerCallback = (entries, observer, staggerDelay) => {
+    // Sort visible entries top-to-bottom
+    const visibleEntries = entries.filter(entry => entry.isIntersecting)
+                                  .sort((a, b) => a.target.offsetTop - b.target.offsetTop);
+
+    visibleEntries.forEach((entry, index) => {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Only animate once
+      }, index * staggerDelay);
+    });
+  };
+
+  // Observer for fade-slide elements (300ms stagger)
+  const fadeSlideObserver = new IntersectionObserver((entries, observer) => {
+    observerCallback(entries, observer, 300);
+  }, { threshold: 0.1 });
+
+  fadeSlides.forEach(el => fadeSlideObserver.observe(el));
+
+  // Observer for right-column-scroll-indicator (600ms stagger)
+  const rightColumnObserver = new IntersectionObserver((entries, observer) => {
+    observerCallback(entries, observer, 600);
+  }, { threshold: 0.1 });
+
+  rightColumnItems.forEach(el => rightColumnObserver.observe(el));
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all fade-slide and right-column-scroll-indicator elements
+  const allElements = Array.from(document.querySelectorAll('.fade-slide, .right-column-scroll-indicator'));
+
+  // Sort elements by vertical position (top offset)
+  allElements.sort((a, b) => a.offsetTop - b.offsetTop);
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    // Filter entries that are intersecting (visible)
+    const visibleEntries = entries.filter(entry => entry.isIntersecting);
+
+    // Sort visible entries top to bottom
+    visibleEntries.sort((a, b) => a.target.offsetTop - b.target.offsetTop);
+
+    visibleEntries.forEach((entry, index) => {
+      // Stagger animation by 400ms between each element
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // animate only once
+      }, index * 600);
+    });
+  }, { threshold: 0.1 });
+
+  // Observe all elements
+  allElements.forEach(el => observer.observe(el));
+});
+</script>
+
+</script>
+
+
+<script>
+  // Delay the start of grid image animations
+  setTimeout(() => {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.work-page-grid-item').forEach((item, index) => {
+      item.style.transitionDelay = `${index * 100}ms`;
+      observer.observe(item);
+    });
+  }, 1500); // <-- matches your intro animation time
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const footer = document.getElementById('footer');
+
+  if (!footer) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        footer.classList.add('visible');
+        observer.unobserve(footer); // animate only once
+      }
+    },
+    { threshold: 0.1 }
+  );
+
+  observer.observe(footer);
+});
+
+</script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".slide-in").forEach((el, i) => {
+  gsap.from(el, {
+    scrollTrigger: {
+      trigger: el,
+      start: "top 85%",
+      toggleActions: "play none none none",
+    },
+    y: 40,
+    opacity: 0,
+    duration: 0.6,
+    delay: i * 0.1,
+    ease: "power3.out"
+  });
+});
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const arrowIcon = document.querySelector('.arrow-icon');
+
+    if (arrowIcon) {
+      arrowIcon.addEventListener('click', () => {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth'
+        });
+      });
+    }
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const containers = document.querySelectorAll('.image-container');
+
+    containers.forEach(container => {
+      const img = container.querySelector('img');
+      const overlay = container.querySelector('.overlay');
+
+      // Apply smooth transitions inline (once)
+      container.style.transition = 'border-radius 0.8s ease';
+      if (img) img.style.transition = 'border-radius 0.8s ease, opacity 0.8s ease';
+      if (overlay) overlay.style.transition = 'opacity 0.8s ease, border-radius 0.8s ease';
+
+      container.addEventListener('mouseenter', () => {
+        container.style.setProperty('border-radius', '0', 'important');
+        if (img) {
+          img.style.setProperty('border-radius', '0', 'important');
+          img.style.opacity = '0.75';
+        }
+        if (overlay) {
+          overlay.style.setProperty('border-radius', '0', 'important');
+          overlay.style.opacity = '1';
+          // pointerEvents removed here to avoid blocking cursor hover
+          // overlay.style.pointerEvents = 'auto';
+        }
+      });
+
+      container.addEventListener('mouseleave', () => {
+        container.style.setProperty('border-radius', '30px', 'important');
+        if (img) {
+          img.style.setProperty('border-radius', '30px', 'important');
+          img.style.opacity = '1';
+        }
+        if (overlay) {
+          overlay.style.setProperty('border-radius', '30px', 'important');
+          overlay.style.opacity = '0';
+          // pointerEvents removed here to avoid blocking cursor hover
+          // overlay.style.pointerEvents = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

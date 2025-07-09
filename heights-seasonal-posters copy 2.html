@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<head>
+  <title>Shruti Karthikeyan | Designer and Illustrator | Project Page</title>
+  <meta name="description"
+    content="When writing a meta description, keep it between 140 and 160 characters so Google can display your entire message. Don’t forget to include your keyword!">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="screenshot.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <script src="https://kit.fontawesome.com/d300c2ea15.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles/style.css">
+  <style>
+    /* Add styles for transition effect */
+    * {
+      transition: color 0.5s ease, background-color 0.5s ease;
+    }
+    .newimage-container-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 20px; /* Optional: adds space between the columns */
+  justify-items: center; /* Centers the items horizontally within their grid cell */
+  margin: 0 0;
+  padding-bottom: 20px;
+}
+.newimage-container-rowbottom{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 20px; /* Optional: adds space between the columns */
+  justify-items: center; /* Centers the items horizontally within their grid cell */
+  margin: 0 0;
+  padding-bottom: 3%;
+}
+.newimage-container-rowgap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 20px; /* Optional: adds space between the columns */
+  justify-items: center; /* Centers the items horizontally within their grid cell */
+  margin: 0 0;
+  padding-bottom: 3%;
+}
+@media (max-width: 768px){
+  .newimage-container-rowgap{
+  padding-bottom: 30px;
+}
+}
+.newimage-containergap{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 20px;
+}
+.column1-container{
+  padding-left: 10%;
+  padding-right: 0%;
+}
+.column2-container{
+  padding-right: 10%;
+  padding-left: 0%;
+}
+
+.newimage-container{
+  padding-bottom: 3%;
+}
+@media (max-width: 768px){
+  .newimage-container{
+  padding-bottom: 30px;
+}
+}
+.onenewimage-container{
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-top: 0;
+  padding-bottom: 3%;
+}
+.illusfreshhero-headline-wrapper{
+  padding-left: 5%;
+}
+.newfreshproject-title{
+  text-align: left;
+  padding-bottom: 2%;
+}
+.page-buttons{
+  display: block;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  text-align: right
+}
+/* Mobile layout */
+@media (max-width: 768px) { /* Adjust the width as needed for your mobile breakpoint */
+    .newimage-container-row {
+        display: block; /* Stacks items vertically */
+    }
+    .newimage-container-rowbottom{
+        display: block; /* Stacks items vertically */
+    }
+    .newimage-container-rowgap {
+        display: block; /* Stacks items vertically */
+    }
+    .newimage-containergap {
+        display: block; /* Stacks items vertically */
+    }
+    .column1-container{
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-bottom: 3%;
+    }
+    .column2-container{
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    .newimage-container{
+      display: block;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+}
+.figma-container {
+    position: relative;
+
+    padding-top: 56.25%; /* Aspect ratio: 16:9. Adjust as needed */
+  
+}
+
+.figma-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 5%;
+    padding-bottom: 3%;
+    padding-right: 5%;
+    width: 100%;
+    height: 100%;
+    border: none;
+  
+}
+
+/* Optional: Adjust aspect ratio on mobile */
+@media (max-width: 768px) {
+    .figma-container {
+        padding-top: 100%; /* Makes it square on smaller screens */
+    }
+}
+
+</style>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        position: relative;
+        padding: 20px;
+        background-color: #333; /* Optional background for the header */
+        color: #E6693D; /* Optional text color for the header */
+    }
+
+    .menu-icon {
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .menu-overlay {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #FFF8F0;
+        z-index: 1000; /* Sit on top */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color:#E6693D;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 400;
+        font-size: 45px;
+        text-decoration: underline;
+        margin-top: 0;
+        padding-top: 0;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 6px; /* Adjust this value to create space above the underline */
+        
+    }
+
+    .menu-item {
+        color:#E6693D;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 400;
+        font-size: 45px;
+        text-decoration: none;
+        margin-top: 5rem;
+    }
+    .menu-item.underline {
+    text-decoration: underline; /* Apply underline only for WORK */
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px; /* Space above the underline */
+}
+     .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color:#E6693D;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 400;
+        font-size: 45px;
+        text-decoration: none;
+     }
+     .menu-item:hover {
+    color: black; /* Change text color on hover */
+    text-decoration-color: black; /* Change underline color on hover */
+    color: black;
+}
+.menu:hover {
+    color: black; /* Change color to black on hover */
+}
+    .close-btn {
+        position: absolute;
+        top: 27px;
+        right: 20px;
+        font-size: 76px;
+        color: #E6693D;
+        cursor: pointer;
+    }
+
+    /* Add your additional styles here */
+.newimage-container{
+  display: flex;
+  justify-content: center;
+}
+.freshproject-title{
+  color: black!important
+}
+
+
+</style>
+</head>
+<body>
+  
+</head>
+
+<body class="work-page">
+  <header class="hero-header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/branding-images/logo-orange.svg" alt="Shruti Karthikeyan Logo">
+      </a>
+    </div>
+    <nav class="navbar">
+      <div class="menu-icon" id="menu-icon">&#9776;</div> <!-- Menu Icon -->
+      <div class="menu-overlay" id="menu-overlay">
+        <div class="close-btn" id="close-btn">&times;</div> <!-- Close Button -->
+        <nav class="menu">
+            <a href="work-clean.html" class="menu-item underline">WORK</a>
+            <a href="illustration.html" class="menu-item">ILLUSTRATION</a>
+            <a href="about.html" class="menu-item">ABOUT</a>
+        </nav>
+    </div>
+      <div class="nav-container desktop">
+      <ul class="branding-navigation">
+        <li><a href="work-clean.html" class="custom-navigation active">WORK</a></li>
+        <li><a href="illustration.html" class="custom-navigation">ILLUSTRATION</a></li>
+        <li><a href="about.html" class="custom-navigation">ABOUT</a></li>
+        
+      </ul>
+      </div>
+    </div>
+    </nav>
+  </header>
+  <div class="seefreshhero-headline-wrapper">
+    <h3 class="seefreshproject-titleoverview">Heights Seasonal Posters</h3>
+    <h3 class="seefreshproject-title">ILLUSTRATION | POSTER DESIGN</h3>
+ </div>
+  <div class="freshhero-headline-wrapper">
+    <h3 class="freshproject-titleoverview">Project Overview</h3>
+    <a href=https://www.burnabyheights.com/ class="freshproject-title"><span class="bold">Client:</span> Heights Merchants Association</a>
+    <h3 class="freshproject-title"><span class="bold">Location:</span> Burnaby, BC, Canada.</h3>
+    <h3 class="freshproject-title"><span class="bold">Scope:</span> To develop a series of posters celebrating popular neighbourhood events such as Halloween on the Heights, Deck the Heights, and Lunar New Year. </h3>
+ </div>
+  </div>
+  <div class="newimage-container">
+    <img src="assets/PROJECT 2/shruti-karthikeyan-graphic-designer-idea-grad-2025-heights-seasonal-posters-poster-design-capilano-university-idea-school-of-design.gif" alt="Describe your project"
+    style="width: 100%; height: 100%;">
+  </div>
+
+<div class="freshhero-headline-wrapper">
+  <h3 class="freshproject-titleoverview">The Challenge</h3>
+  <h3 class="freshproject-title">The Heights consists of over 350 businesses along Hastings Street. However, in recent years, these businesses have been losing customers to new shopping malls emerging around the district.
+    </h3>
+</div>
+<div class="newimage-container">
+  <img src="assets/PROJECT 2/shruti-karthikeyan-graphic-designer-idea-grad-2025-heights-seasonal-posters-halloween-on-the-heights-poster-street-transit-bus-shelter-capilano-university-idea-school-of-design.jpg" alt="Describe your project"
+  style="width: 100%; height: 100%;">
+</div>
+<div class="freshhero-headline-wrapper">
+  <h3 class="freshproject-titleoverview">The Solution</h3>
+  <h3 class="freshproject-title">I created posters that celebrate the unique community-focused spirit of the Heights. Each different event supported by local businesses reminds shoppers that the Heights’ is a different shopping experience, one that shopping malls cannot deliver.
+
+    </h3>
+</div>
+<div class="newimage-container">
+  <img src="assets/PROJECT 2/shruti-karthikeyan-graphic-designer-idea-grad-2025-heights-seasonal-posters-halloween-on-the-heights-poster-capilano-university-idea-school-of-design.jpg" alt="Describe your project"
+  style="width: 40%; height: 40%;">
+</div>
+<div class="newimage-container">
+  <img src="assets/PROJECT 2/shruti-karthikeyan-graphic-designer-idea-grad-2025-heights-seasonal-posters-deck-the-heights-christmas-poster-capilano-university-idea-school-of-design.jpg" alt="Describe your project"
+  style="width: 40%; height: 40%;">
+</div>
+<div class="newimage-container">
+  <img src="assets/PROJECT 2/shruti-karthikeyan-graphic-designer-idea-grad-2025-heights-seasonal-posters-lunar-new-year-year-of-the-snake-poster-capilano-university-idea-school-of-design.jpg" alt="Describe your project"
+  style="width: 40%; height: 40%;">
+</div>
+<div class="newimage-container-rowgap">
+  <div class="column1-container">
+    <img src="assets/PROJECT 2/shruti-karthikeyan-graphic-designer-idea-grad-2025-heights-seasonal-posters-halloween-on-the-heights-poster-capilano-university-idea-school-of-design.jpg" alt="Describe your project">
+  
+  </div>
+  <div class="column2-container">
+    <img src="assets/PROJECT 2/shruti-karthikeyan-graphic-designer-idea-grad-2025-heights-seasonal-posters-halloween-on-the-heights-poster-close-up-capilano-university-idea-school-of-design.jpg" alt="Describe your project">
+  </div>
+</div>
+<div class="newimage-container-rowgap">
+  <div class="column1-container">
+    <img src="assets/PROJECT 2/shruti-karthikeyan-graphic-designer-idea-grad-2025-heights-seasonal-posters-deck-the-heights-christmas-poster-capilano-university-idea-school-of-design.jpg" alt="Describe your project">
+  
+  </div>
+  <div class="column2-container">
+    <img src="assets/PROJECT 2/shruti-karthikeyan-graphic-designer-idea-grad-2025-heights-seasonal-posters-deck-the-heights-christmas-poster-close-up-capilano-university-idea-school-of-design.jpg" alt="Describe your project">
+  </div>
+</div>
+<div class="newimage-container-rowgap">
+  <div class="column1-container">
+    <img src="assets/PROJECT 2/shruti-karthikeyan-graphic-designer-idea-grad-2025-heights-seasonal-posters-lunar-new-year-year-of-the-snake-poster-capilano-university-idea-school-of-design.jpg" alt="Describe your project">
+  
+  </div>
+  <div class="column2-container">
+    <img src="assets/PROJECT 2/shruti-karthikeyan-graphic-designer-idea-grad-2025-heights-seasonal-posters-lunar-new-year-year-of-the-snake-poster-close-up-capilano-university-idea-school-of-design.jpg" alt="Describe your project">
+  </div>
+</div>
+ <!-- Add navigation buttons here -->
+ <div class="page-buttons">
+  <a href="maladh-syrian-cuisine.html" class="page-button next-button">NEXT PAGE &gt;</a>
+</div>
+</main>
+  <ul class="global-footer" id="footer">
+    <!-- Left Column -->
+    <li class="footer-item footer-left">
+        <p class="footer-heading-static2">Like what you see?</p>
+        <p class="footer-bodycopy">hello@shrutikarthikeyan.com</p>
+        <p class="footer-bodycopy3">Open to commissions, projects, inquiries or coffee! Let's chat.</p>
+
+        <p class="footer-heading-static">Awards</p>
+        <p class="footer-bodycopy4"><i class="fas fa-arrow-right no-color-change"></i> Capic Rodeo 16 2nd Place Illustration 2024</p>
+        <p class="footer-bodycopy4"><i class="fas fa-arrow-right no-color-change"></i> Capic Rodeo 16 Top 10 Illustration 2024</p>
+        <p class="footer-bodycopy4"><i class="fas fa-arrow-right no-color-change"></i> Capic Rodeo 16 Top 10 Illustration 2024</p>
+
+        <p class="footer-heading-static">Experience</p>
+        <p class="footer-bodycopy5"><i class="fas fa-arrow-right no-color-change"></i> Heights Merchants Association - Digital and Marketing Design Assistant (Summer 2024)</p>
+        <p class="footer-bodycopy5"><i class="fas fa-arrow-right no-color-change"></i> Capilano Courier - Freelance Illustrator (2022-2024)</p>
+    </li>
+
+    <!-- Right Column -->
+    <li class="footer-item footer-right">
+        <!-- Grouping WORK, ILLUSTRATION, ABOUT in a container -->
+        <div class="footer-links">
+            <p class="footer-bodycopy22 underline">WORK</p>
+            <p class="footer-bodycopy2 hoverable">ILLUSTRATION</p>
+            <p class="footer-bodycopy2 hoverable">ABOUT</p>
+        </div>
+
+        <!-- Grouping Featured Work in a container -->
+        <div class="featured-work">
+            <p class="footer-heading-static3">Featured Work</p>
+            <p class="footer-bodycopy4">Natural Vitality Calm</p>
+            <p class="footer-bodycopy4">Maladh - Syrian Cuisine</p>
+            <p class="footer-bodycopy4">Heights' Seasonal Posters</p>
+        </div>
+
+        <!-- Grouping Contact info and social media links in a container -->
+        <div class="contact-info">
+            <p class="footer-heading-static">Contact</p>
+            <div class="social-icons footer-social-icons">
+                <a href="https://www.instagram.com/shrutikarthikeyan/?hl=en" target="_blank" class="icon-link2">
+                    <i class="fab fa-instagram fa-5x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/shruti-karthikeyan-57b47023b/" target="_blank" class="icon-link2">
+                    <i class="fab fa-linkedin fa-5x"></i>
+                </a>
+                <a href="https://www.behance.net/shrutikarthikeyan" target="_blank" class="icon-link2">
+                    <i class="fab fa-behance fa-5x"></i>
+                </a>
+                <a href="mailto:shruti.karthikeyan403@gmail.com" target="_blank" class="icon-link2">
+                    <i class="fas fa-envelope fa-5x"></i>
+                </a>
+            </div>
+        </div>
+        <li class="footer-item-4">
+          <p class="fineprint">&copy; Shruti Karthikeyan 2024. All Rights Reserved.</p>
+        </li>
+      </ul>
+    
+      <div id="myID" class="bottomMenu hide"><a href="#">Back to top</a></div>
+        <!-- Footer Fine Print -->
+    </li>
+</ul>
+
+<script>
+   function toggleMenu() {
+    const navLinks = document.getElementById("nav-links");
+    navLinks.classList.toggle("show"); // Toggle the show class to display the menu
+}
+</script>
+
+<script>
+  const menuIcon = document.getElementById('menu-icon');
+  const menuOverlay = document.getElementById('menu-overlay');
+  const closeBtn = document.getElementById('close-btn');
+
+  // Show the menu overlay when the menu icon is clicked
+  menuIcon.addEventListener('click', () => {
+      menuOverlay.style.display = 'flex'; // Use flex to center the content
+  });
+
+  // Hide the menu overlay when the close button is clicked
+  closeBtn.addEventListener('click', () => {
+      menuOverlay.style.display = 'none';
+  });
+
+  // Optional: Hide the menu overlay when clicking outside the menu
+  menuOverlay.addEventListener('click', (event) => {
+      if (event.target === menuOverlay) {
+          menuOverlay.style.display = 'none';
+        }
+      });
+  </script>
+</body>
+
+</html>
