@@ -1250,16 +1250,22 @@ padding-top: 2%!important;
 body{
   padding-bottom: 0px;
 }
-
+@media (max-width: 768px) {
+  .footer-email {
+    font-size: 1.3rem!important; /* or smaller as needed */
+  }
+}
 
 </style>
  <ul class="global-footer" id="footer">
   <!-- Left Column -->
   <li class="footer-item footer-left">
     <p class="footer-heading-static2">Like what you see?</p>
-    <a href="mailto:shrutikarthikeyan.creative@gmail.com" target="_blank" class="footer-bodycopy">
-    shrutikarthikeyan.creative@gmail.com
-    </a>
+    <a href="mailto:shrutikarthikeyan.creative@gmail.com" 
+   target="_blank" 
+   class="footer-bodycopy footer-email">
+  shrutikarthikeyan.creative@gmail.com
+</a>
 
     <!-- Contact Info and Social Media -->
     <div class="contact-info">
@@ -1315,16 +1321,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const footerObserver = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         footer.classList.add("visible");
-        if (backToTop) backToTop.classList.add("show");
+        backToTop?.classList.add("show");
       } else {
-        if (backToTop) backToTop.classList.remove("show");
+        backToTop?.classList.remove("show");
       }
     }, { threshold: 0.1 });
-
     footerObserver.observe(footer);
   }
 
   // ======= Cursor Animations (Disabled on Mobile) =======
+  let animationFrameId = null;
   if (!isMobile) {
     const cursor = document.querySelector('.cursor');
     const ripple = document.querySelector('.ripple');
@@ -1395,9 +1401,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       cursor.style.left = ripple.style.left = `${currentX}px`;
       cursor.style.top = ripple.style.top = `${currentY}px`;
-      requestAnimationFrame(animateCursor);
+      animationFrameId = requestAnimationFrame(animateCursor);
     }
-    animateCursor();
+    animationFrameId = requestAnimationFrame(animateCursor);
 
     // Click Ripple Effect
     document.addEventListener('click', () => {
@@ -1426,39 +1432,48 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   } else {
-    // Remove cursor for mobile
+    // Remove cursor for mobile and cancel animation
     document.querySelector('.cursor')?.remove();
     document.querySelector('.ripple')?.remove();
+    if (animationFrameId) cancelAnimationFrame(animationFrameId);
   }
 
   // ======= Animated Grid Items =======
   const gridItems = document.querySelectorAll('.work-page-grid-item');
-  const itemObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        entry.target.style.transitionDelay = `${index * (isMobile ? 50 : 100)}ms`;
-        entry.target.classList.add('visible');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  gridItems.forEach(item => itemObserver.observe(item));
+  if (!isMobile) {
+    const itemObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = `${index * 100}ms`;
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    gridItems.forEach(item => itemObserver.observe(item));
+  } else {
+    // Instantly show items on mobile (no animation delays)
+    gridItems.forEach(item => item.classList.add('visible'));
+  }
 
   // ======= Fade Slides and Scroll Indicators =======
   const fadeElements = document.querySelectorAll('.fade-slide, .right-column-scroll-indicator');
-  const fadeObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-          obs.unobserve(entry.target);
-        }, index * (isMobile ? 200 : 400));
-      }
-    });
-  }, { threshold: 0.1 });
-
-  fadeElements.forEach(el => fadeObserver.observe(el));
+  if (!isMobile) {
+    const fadeObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }, index * 400);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeElements.forEach(el => fadeObserver.observe(el));
+  } else {
+    // Instantly show all fade-slide elements on mobile
+    fadeElements.forEach(el => el.classList.add('visible'));
+  }
 
   // ======= Mobile Menu Toggle =======
   const menuIcon = document.getElementById('menu-icon');
@@ -1481,32 +1496,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ======= Image Hover Effects =======
-  document.querySelectorAll('.image-container').forEach(container => {
-    const img = container.querySelector('img');
-    const overlay = container.querySelector('.overlay');
-    container.style.transition = 'border-radius 0.8s ease';
-    if (img) img.style.transition = 'border-radius 0.8s ease, opacity 0.8s ease';
-    if (overlay) overlay.style.transition = 'opacity 0.8s ease, border-radius 0.8s ease';
+  // ======= Image Hover Effects (Only for Desktop) =======
+  if (!isMobile) {
+    document.querySelectorAll('.image-container').forEach(container => {
+      const img = container.querySelector('img');
+      const overlay = container.querySelector('.overlay');
+      container.style.transition = 'border-radius 0.8s ease';
+      if (img) img.style.transition = 'border-radius 0.8s ease, opacity 0.8s ease';
+      if (overlay) overlay.style.transition = 'opacity 0.8s ease, border-radius 0.8s ease';
 
-    container.addEventListener('mouseenter', () => {
-      container.style.setProperty('border-radius', '0', 'important');
-      img?.style.setProperty('border-radius', '0', 'important');
-      overlay?.style.setProperty('border-radius', '0', 'important');
-      img && (img.style.opacity = '0.75');
-      overlay && (overlay.style.opacity = '1');
-    });
+      container.addEventListener('mouseenter', () => {
+        container.style.setProperty('border-radius', '0', 'important');
+        img?.style.setProperty('border-radius', '0', 'important');
+        overlay?.style.setProperty('border-radius', '0', 'important');
+        img && (img.style.opacity = '0.75');
+        overlay && (overlay.style.opacity = '1');
+      });
 
-    container.addEventListener('mouseleave', () => {
-      container.style.setProperty('border-radius', '30px', 'important');
-      img?.style.setProperty('border-radius', '30px', 'important');
-      overlay?.style.setProperty('border-radius', '30px', 'important');
-      img && (img.style.opacity = '1');
-      overlay && (overlay.style.opacity = '0');
+      container.addEventListener('mouseleave', () => {
+        container.style.setProperty('border-radius', '30px', 'important');
+        img?.style.setProperty('border-radius', '30px', 'important');
+        overlay?.style.setProperty('border-radius', '30px', 'important');
+        img && (img.style.opacity = '1');
+        overlay && (overlay.style.opacity = '0');
+      });
     });
-  });
+  }
 });
 </script>
+
 
 
 
