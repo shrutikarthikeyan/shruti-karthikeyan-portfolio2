@@ -943,6 +943,9 @@ max-width: 1000px;
   90%  { transform: translateY(18px); }
   100% { transform: translateY(20px); }
 }
+.intro-text {
+  color: black !important;
+}
 
 </style>
 
@@ -958,13 +961,13 @@ max-width: 1000px;
 
     <!-- Left column: Intro + Button -->
     <div class="left-column" style="flex: 1; min-width: 250px;">
-      <h3 class="intro-text fade-slide">
+      <h3 class="intro-text fade-slide visible" style="color: black !important;">
         A graphic designer and illustrator based in Vancouver, BC.
         I translate complex ideas into clear, memorable visuals that drive connection and business success.
       </h3>
 
       <div class="button-group slide-in-group" style="margin-top: 20px;">
-        <a href="assets/about/ShrutiKarthikeyan_Resume.pdf" target="_blank" class="btn slide-in">Let's Work Together</a>
+        <a href="assets/about/Resume-Shruti Karthikeyan.pdf" target="_blank" class="btn slide-in">Let's Work Together</a>
       </div>
     </div>
 
@@ -1302,174 +1305,117 @@ body{
 </div> 
   
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const isMobile = window.innerWidth < 768;
+
+  // ======= Footer Reveal on Scroll =======
   const footer = document.getElementById('footer');
-  let isVisible = false;
+  const backToTop = document.getElementById("myID");
+  if (footer) {
+    const footerObserver = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        footer.classList.add("visible");
+        if (backToTop) backToTop.classList.add("show");
+      } else {
+        if (backToTop) backToTop.classList.remove("show");
+      }
+    }, { threshold: 0.1 });
 
-  window.addEventListener('scroll', () => {
-    const scrollBottom = window.scrollY + window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
+    footerObserver.observe(footer);
+  }
 
-    if (!isVisible && scrollBottom >= docHeight - 10) {
-      footer.classList.add('visible');
-      isVisible = true;
-    }
-  });
-</script>
-
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
+  // ======= Cursor Animations (Disabled on Mobile) =======
+  if (!isMobile) {
     const cursor = document.querySelector('.cursor');
-    const hoverElements = document.querySelectorAll('.btn, img, .arrow-icon');
+    const ripple = document.querySelector('.ripple');
+    const cursorText = document.querySelector('.cursor-text');
+    const hoverElements = document.querySelectorAll('.btn, img, .arrow-icon, .work-page-grid-item');
 
-    const colors = ['#6593E9', '#99AD33', '#E6693D'];
-    let currentIndex = 0;
-
-    // Cycle colors every 5 seconds
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % colors.length;
-    }, 5000);
-
-    // Hover behavior for all targets
-    hoverElements.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.backgroundColor = colors[currentIndex];
-        cursor.style.borderColor = colors[currentIndex];
-      });
-
-      el.addEventListener('mouseleave', () => {
-        cursor.style.backgroundColor = 'transparent';
-        cursor.style.borderColor = 'black';
-      });
-    });
-
-    // Cursor movement tracking
-    let mouseX = 0, mouseY = 0;
-    let currentX = 0, currentY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    function animate() {
-      currentX += (mouseX - currentX) * 0.2;
-      currentY += (mouseY - currentY) * 0.2;
-
-      cursor.style.left = currentX + 'px';
-      cursor.style.top = currentY + 'px';
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  });
-</script>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
     const colors = ['#6593E9', '#99AD33', '#E6693D'];
     const logos = [
       'assets/branding-images/logo-blue.svg',
       'assets/branding-images/logo-green.svg',
       'assets/branding-images/logo-orange.svg'
     ];
-
-    const elements = document.querySelectorAll(
-      'body *:not(.testimonial):not(.footer-heading-static):not(.footer-heading-static2):not(.footer-heading-static3):not(.no-color-change):not(h3):not(.footer-bodycopy):not(.footer-bodycopy2):not(.footer-bodycopy22):not(.footer-bodycopy4):not(.footer-bodycopy5):not(.fineprint):not(.footer-bodycopy3):not(.overlay-text):not(.footer-social-icons *)'
-    );
-    const footer = document.getElementById("footer");
-    const logoElement = document.getElementById("logo");
-
-    const cursor = document.querySelector('.cursor');
-    const ripple = document.querySelector('.ripple');
-    const cursorText = document.querySelector('.cursor-text');
-
     let currentIndex = 0;
-    let mouseX = 0, mouseY = 0;
-    let currentX = 0, currentY = 0;
 
-    function changeTheme() {
-      elements.forEach(el => el.style.color = colors[currentIndex]);
-      if (footer) footer.style.backgroundColor = colors[currentIndex];
-      if (logoElement) logoElement.src = logos[currentIndex];
+    setInterval(() => {
       currentIndex = (currentIndex + 1) % colors.length;
-    }
+      document.querySelectorAll('*:not(.no-color-change)').forEach(el => {
+        el.style.color = colors[currentIndex];
+      });
+      const logo = document.getElementById("logo");
+      if (logo) logo.src = logos[currentIndex];
+      if (footer) footer.style.backgroundColor = colors[currentIndex];
+    }, 5000);
 
-    changeTheme();
-    setInterval(changeTheme, 5000);
+    hoverElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.backgroundColor = colors[currentIndex];
+        cursor.style.borderColor = colors[currentIndex];
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.backgroundColor = 'transparent';
+        cursor.style.borderColor = 'black';
+      });
+    });
 
-    document.addEventListener('mousemove', (e) => {
+    // Cursor Tracking and Magnetic Effect
+    let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
+    let magneticTarget = null, magneticTargetX = 0, magneticTargetY = 0;
+
+    document.addEventListener('mousemove', e => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-    });
 
-    // Magnetic cursor effect
-    const magneticDistance = 100;
-    const magneticStrength = 0.15;
-    const projectItems = document.querySelectorAll('.work-page-grid-item');
-
-    let magneticTarget = null;
-    let magneticTargetX = 0;
-    let magneticTargetY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-      let closestElement = null;
-      let closestDistance = magneticDistance;
-
-      projectItems.forEach(el => {
+      // Magnetic Effect
+      let closest = null, minDist = 100;
+      document.querySelectorAll('.work-page-grid-item').forEach(el => {
         const rect = el.getBoundingClientRect();
-        const elCenterX = rect.left + rect.width / 2;
-        const elCenterY = rect.top + rect.height / 2;
-        const dist = Math.hypot(e.clientX - elCenterX, e.clientY - elCenterY);
-        if (dist < closestDistance) {
-          closestDistance = dist;
-          closestElement = el;
-          magneticTargetX = elCenterX;
-          magneticTargetY = elCenterY;
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const dist = Math.hypot(e.clientX - centerX, e.clientY - centerY);
+        if (dist < minDist) {
+          minDist = dist;
+          closest = el;
+          magneticTargetX = centerX;
+          magneticTargetY = centerY;
         }
       });
-
-      magneticTarget = closestElement;
+      magneticTarget = closest;
     });
 
-    function animate() {
+    function animateCursor() {
       if (magneticTarget) {
-        currentX += (magneticTargetX - currentX) * magneticStrength;
-        currentY += (magneticTargetY - currentY) * magneticStrength;
+        currentX += (magneticTargetX - currentX) * 0.15;
+        currentY += (magneticTargetY - currentY) * 0.15;
       } else {
         currentX += (mouseX - currentX) * 0.2;
         currentY += (mouseY - currentY) * 0.2;
       }
-
-      cursor.style.left = ripple.style.left = currentX + 'px';
-      cursor.style.top = ripple.style.top = currentY + 'px';
-
-      requestAnimationFrame(animate);
+      cursor.style.left = ripple.style.left = `${currentX}px`;
+      cursor.style.top = ripple.style.top = `${currentY}px`;
+      requestAnimationFrame(animateCursor);
     }
+    animateCursor();
 
-    animate();
-
+    // Click Ripple Effect
     document.addEventListener('click', () => {
       ripple.style.animation = 'none';
       ripple.offsetHeight;
       ripple.style.animation = 'clickRipple 0.4s ease-out';
     });
 
-    // Cursor hover interaction only on project items
-    projectItems.forEach(item => {
+    // Project Hover Cursor Behavior
+    document.querySelectorAll('.work-page-grid-item').forEach(item => {
       item.addEventListener('mouseenter', () => {
         cursor.style.width = '100px';
         cursor.style.height = '100px';
         cursor.style.backgroundColor = colors[(currentIndex === 0 ? colors.length : currentIndex) - 1];
         cursor.style.border = 'none';
         cursorText.textContent = 'View Project';
-        cursorText.style.color = 'black';
         cursorText.style.opacity = 1;
       });
-
       item.addEventListener('mouseleave', () => {
         cursor.style.width = '30px';
         cursor.style.height = '30px';
@@ -1479,249 +1425,87 @@ body{
         cursorText.style.opacity = 0;
       });
     });
-  });
-  
-</script>
-<script>
-   function toggleMenu() {
-    const navLinks = document.getElementById("nav-links");
-    navLinks.classList.toggle("show"); // Toggle the show class to display the menu
-}
-</script>
+  } else {
+    // Remove cursor for mobile
+    document.querySelector('.cursor')?.remove();
+    document.querySelector('.ripple')?.remove();
+  }
 
+  // ======= Animated Grid Items =======
+  const gridItems = document.querySelectorAll('.work-page-grid-item');
+  const itemObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = `${index * (isMobile ? 50 : 100)}ms`;
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
 
+  gridItems.forEach(item => itemObserver.observe(item));
 
-<script>
+  // ======= Fade Slides and Scroll Indicators =======
+  const fadeElements = document.querySelectorAll('.fade-slide, .right-column-scroll-indicator');
+  const fadeObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }, index * (isMobile ? 200 : 400));
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeElements.forEach(el => fadeObserver.observe(el));
+
+  // ======= Mobile Menu Toggle =======
   const menuIcon = document.getElementById('menu-icon');
   const menuOverlay = document.getElementById('menu-overlay');
   const closeBtn = document.getElementById('close-btn');
 
-  // Show the menu overlay when the menu icon is clicked
-  menuIcon.addEventListener('click', () => {
-      menuOverlay.style.display = 'flex'; // Use flex to center the content
-  });
-
-  // Hide the menu overlay when the close button is clicked
-  closeBtn.addEventListener('click', () => {
-      menuOverlay.style.display = 'none';
-  });
-
-  // Optional: Hide the menu overlay when clicking outside the menu
-  menuOverlay.addEventListener('click', (event) => {
-      if (event.target === menuOverlay) {
-          menuOverlay.style.display = 'none';
-        }
-      });
-  </script>
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const footer = document.getElementById("footer");
-    const backToTop = document.getElementById("myID");
-
-    const observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            backToTop.classList.add("show");
-          } else {
-            backToTop.classList.remove("show");
-          }
-        });
-      },
-      {
-        root: null, // viewport
-        threshold: 0.1 // 10% of footer is visible
-      }
-    );
-
-    if (footer) {
-      observer.observe(footer);
-    }
-  });
- 
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Select all fade-slide except right-column-scroll-indicator
-  const fadeSlides = document.querySelectorAll('.fade-slide:not(.right-column-scroll-indicator)');
-  // Select all right-column-scroll-indicator
-  const rightColumnItems = document.querySelectorAll('.right-column-scroll-indicator');
-
-  // IntersectionObserver callback
-  const observerCallback = (entries, observer, staggerDelay) => {
-    // Sort visible entries top-to-bottom
-    const visibleEntries = entries.filter(entry => entry.isIntersecting)
-                                  .sort((a, b) => a.target.offsetTop - b.target.offsetTop);
-
-    visibleEntries.forEach((entry, index) => {
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Only animate once
-      }, index * staggerDelay);
+  if (menuIcon && menuOverlay && closeBtn) {
+    menuIcon.addEventListener('click', () => menuOverlay.style.display = 'flex');
+    closeBtn.addEventListener('click', () => menuOverlay.style.display = 'none');
+    menuOverlay.addEventListener('click', e => {
+      if (e.target === menuOverlay) menuOverlay.style.display = 'none';
     });
-  };
+  }
 
-  // Observer for fade-slide elements (300ms stagger)
-  const fadeSlideObserver = new IntersectionObserver((entries, observer) => {
-    observerCallback(entries, observer, 300);
-  }, { threshold: 0.1 });
-
-  fadeSlides.forEach(el => fadeSlideObserver.observe(el));
-
-  // Observer for right-column-scroll-indicator (600ms stagger)
-  const rightColumnObserver = new IntersectionObserver((entries, observer) => {
-    observerCallback(entries, observer, 600);
-  }, { threshold: 0.1 });
-
-  rightColumnItems.forEach(el => rightColumnObserver.observe(el));
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Select all fade-slide and right-column-scroll-indicator elements
-  const allElements = Array.from(document.querySelectorAll('.fade-slide, .right-column-scroll-indicator'));
-
-  // Sort elements by vertical position (top offset)
-  allElements.sort((a, b) => a.offsetTop - b.offsetTop);
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    // Filter entries that are intersecting (visible)
-    const visibleEntries = entries.filter(entry => entry.isIntersecting);
-
-    // Sort visible entries top to bottom
-    visibleEntries.sort((a, b) => a.target.offsetTop - b.target.offsetTop);
-
-    visibleEntries.forEach((entry, index) => {
-      // Stagger animation by 400ms between each element
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // animate only once
-      }, index * 600);
+  // ======= Smooth Scroll to Bottom on Arrow Click =======
+  const arrow = document.querySelector('.arrow-icon');
+  if (arrow) {
+    arrow.addEventListener('click', () => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     });
-  }, { threshold: 0.1 });
+  }
 
-  // Observe all elements
-  allElements.forEach(el => observer.observe(el));
-});
-</script>
+  // ======= Image Hover Effects =======
+  document.querySelectorAll('.image-container').forEach(container => {
+    const img = container.querySelector('img');
+    const overlay = container.querySelector('.overlay');
+    container.style.transition = 'border-radius 0.8s ease';
+    if (img) img.style.transition = 'border-radius 0.8s ease, opacity 0.8s ease';
+    if (overlay) overlay.style.transition = 'opacity 0.8s ease, border-radius 0.8s ease';
 
-</script>
-
-
-<script>
-  // Delay the start of grid image animations
-  setTimeout(() => {
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.work-page-grid-item').forEach((item, index) => {
-      item.style.transitionDelay = `${index * 100}ms`;
-      observer.observe(item);
+    container.addEventListener('mouseenter', () => {
+      container.style.setProperty('border-radius', '0', 'important');
+      img?.style.setProperty('border-radius', '0', 'important');
+      overlay?.style.setProperty('border-radius', '0', 'important');
+      img && (img.style.opacity = '0.75');
+      overlay && (overlay.style.opacity = '1');
     });
-  }, 1500); // <-- matches your intro animation time
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const footer = document.getElementById('footer');
 
-  if (!footer) return;
-
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        footer.classList.add('visible');
-        observer.unobserve(footer); // animate only once
-      }
-    },
-    { threshold: 0.1 }
-  );
-
-  observer.observe(footer);
-});
-
-</script>
-<script>
-  gsap.registerPlugin(ScrollTrigger);
-
-gsap.utils.toArray(".slide-in").forEach((el, i) => {
-  gsap.from(el, {
-    scrollTrigger: {
-      trigger: el,
-      start: "top 85%",
-      toggleActions: "play none none none",
-    },
-    y: 40,
-    opacity: 0,
-    duration: 0.6,
-    delay: i * 0.1,
-    ease: "power3.out"
-  });
-});
-
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const arrowIcon = document.querySelector('.arrow-icon');
-
-    if (arrowIcon) {
-      arrowIcon.addEventListener('click', () => {
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: 'smooth'
-        });
-      });
-    }
-  });
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const containers = document.querySelectorAll('.image-container');
-
-    containers.forEach(container => {
-      const img = container.querySelector('img');
-      const overlay = container.querySelector('.overlay');
-
-      // Apply smooth transitions inline (once)
-      container.style.transition = 'border-radius 0.8s ease';
-      if (img) img.style.transition = 'border-radius 0.8s ease, opacity 0.8s ease';
-      if (overlay) overlay.style.transition = 'opacity 0.8s ease, border-radius 0.8s ease';
-
-      container.addEventListener('mouseenter', () => {
-        container.style.setProperty('border-radius', '0', 'important');
-        if (img) {
-          img.style.setProperty('border-radius', '0', 'important');
-          img.style.opacity = '0.75';
-        }
-        if (overlay) {
-          overlay.style.setProperty('border-radius', '0', 'important');
-          overlay.style.opacity = '1';
-          // pointerEvents removed here to avoid blocking cursor hover
-          // overlay.style.pointerEvents = 'auto';
-        }
-      });
-
-      container.addEventListener('mouseleave', () => {
-        container.style.setProperty('border-radius', '30px', 'important');
-        if (img) {
-          img.style.setProperty('border-radius', '30px', 'important');
-          img.style.opacity = '1';
-        }
-        if (overlay) {
-          overlay.style.setProperty('border-radius', '30px', 'important');
-          overlay.style.opacity = '0';
-          // pointerEvents removed here to avoid blocking cursor hover
-          // overlay.style.pointerEvents = 'none';
-        }
-      });
+    container.addEventListener('mouseleave', () => {
+      container.style.setProperty('border-radius', '30px', 'important');
+      img?.style.setProperty('border-radius', '30px', 'important');
+      overlay?.style.setProperty('border-radius', '30px', 'important');
+      img && (img.style.opacity = '1');
+      overlay && (overlay.style.opacity = '0');
     });
   });
+});
 </script>
 
 
