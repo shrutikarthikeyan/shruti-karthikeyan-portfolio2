@@ -1252,7 +1252,7 @@ body{
 }
 @media (max-width: 768px) {
   .footer-email {
-    font-size: 1.3rem!important; /* or smaller as needed */
+    font-size: 1rem!important; /* or smaller as needed */
   }
 }
 
@@ -1314,22 +1314,33 @@ body{
 document.addEventListener("DOMContentLoaded", () => {
   const isMobile = window.innerWidth < 768;
 
-  // ======= Footer Reveal on Scroll =======
+  // ======= Unlock Scroll After Load (Failsafe) =======
+  document.body.style.overflow = 'auto';
+  document.documentElement.style.overflow = 'auto';
+
+  // ======= Footer Reveal on Scroll or Show Immediately on Mobile =======
   const footer = document.getElementById('footer');
   const backToTop = document.getElementById("myID");
+
   if (footer) {
-    const footerObserver = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        footer.classList.add("visible");
-        backToTop?.classList.add("show");
-      } else {
-        backToTop?.classList.remove("show");
-      }
-    }, { threshold: 0.1 });
-    footerObserver.observe(footer);
+    if (isMobile) {
+      footer.classList.add("visible");
+      backToTop?.classList.add("show");
+    } else {
+      const footerObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          footer.classList.add("visible");
+          backToTop?.classList.add("show");
+        } else {
+          backToTop?.classList.remove("show");
+        }
+      }, { threshold: 0.1 });
+
+      footerObserver.observe(footer);
+    }
   }
 
-  // ======= Cursor Animations (Disabled on Mobile) =======
+  // ======= Cursor Animations (Desktop Only) =======
   let animationFrameId = null;
   if (!isMobile) {
     const cursor = document.querySelector('.cursor');
@@ -1366,7 +1377,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Cursor Tracking and Magnetic Effect
     let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
     let magneticTarget = null, magneticTargetX = 0, magneticTargetY = 0;
 
@@ -1374,7 +1384,6 @@ document.addEventListener("DOMContentLoaded", () => {
       mouseX = e.clientX;
       mouseY = e.clientY;
 
-      // Magnetic Effect
       let closest = null, minDist = 100;
       document.querySelectorAll('.work-page-grid-item').forEach(el => {
         const rect = el.getBoundingClientRect();
@@ -1405,14 +1414,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     animationFrameId = requestAnimationFrame(animateCursor);
 
-    // Click Ripple Effect
     document.addEventListener('click', () => {
       ripple.style.animation = 'none';
       ripple.offsetHeight;
       ripple.style.animation = 'clickRipple 0.4s ease-out';
     });
 
-    // Project Hover Cursor Behavior
     document.querySelectorAll('.work-page-grid-item').forEach(item => {
       item.addEventListener('mouseenter', () => {
         cursor.style.width = '100px';
@@ -1432,7 +1439,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   } else {
-    // Remove cursor for mobile and cancel animation
     document.querySelector('.cursor')?.remove();
     document.querySelector('.ripple')?.remove();
     if (animationFrameId) cancelAnimationFrame(animationFrameId);
@@ -1452,7 +1458,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.1 });
     gridItems.forEach(item => itemObserver.observe(item));
   } else {
-    // Instantly show items on mobile (no animation delays)
     gridItems.forEach(item => item.classList.add('visible'));
   }
 
@@ -1471,7 +1476,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.1 });
     fadeElements.forEach(el => fadeObserver.observe(el));
   } else {
-    // Instantly show all fade-slide elements on mobile
     fadeElements.forEach(el => el.classList.add('visible'));
   }
 
@@ -1524,6 +1528,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+
 
 
 
