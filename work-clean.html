@@ -1314,11 +1314,14 @@ body{
 document.addEventListener("DOMContentLoaded", () => {
   const isMobile = window.innerWidth < 768;
 
-  // ======= Unlock Scroll After Load (Failsafe) =======
   document.body.style.overflow = 'auto';
   document.documentElement.style.overflow = 'auto';
 
-  // ======= Footer Reveal on Scroll or Show Immediately on Mobile =======
+  setTimeout(() => {
+    window.scrollTo(0, 1);
+    window.scrollTo(0, 0);
+  }, 100);
+
   const footer = document.getElementById('footer');
   const backToTop = document.getElementById("myID");
 
@@ -1335,12 +1338,10 @@ document.addEventListener("DOMContentLoaded", () => {
           backToTop?.classList.remove("show");
         }
       }, { threshold: 0.1 });
-
       footerObserver.observe(footer);
     }
   }
 
-  // ======= Cursor Animations (Desktop Only) =======
   let animationFrameId = null;
   if (!isMobile) {
     const cursor = document.querySelector('.cursor');
@@ -1358,9 +1359,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setInterval(() => {
       currentIndex = (currentIndex + 1) % colors.length;
-      document.querySelectorAll('*:not(.no-color-change)').forEach(el => {
+
+      // ✅ Updated: Exclude footer and its children from color change
+      document.querySelectorAll('body *:not(.no-color-change):not(#footer):not(#footer *)').forEach(el => {
         el.style.color = colors[currentIndex];
       });
+
       const logo = document.getElementById("logo");
       if (logo) logo.src = logos[currentIndex];
       if (footer) footer.style.backgroundColor = colors[currentIndex];
@@ -1412,6 +1416,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cursor.style.top = ripple.style.top = `${currentY}px`;
       animationFrameId = requestAnimationFrame(animateCursor);
     }
+
     animationFrameId = requestAnimationFrame(animateCursor);
 
     document.addEventListener('click', () => {
@@ -1444,7 +1449,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (animationFrameId) cancelAnimationFrame(animationFrameId);
   }
 
-  // ======= Animated Grid Items =======
   const gridItems = document.querySelectorAll('.work-page-grid-item');
   if (!isMobile) {
     const itemObserver = new IntersectionObserver((entries, obs) => {
@@ -1461,7 +1465,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gridItems.forEach(item => item.classList.add('visible'));
   }
 
-  // ======= Fade Slides and Scroll Indicators =======
   const fadeElements = document.querySelectorAll('.fade-slide, .right-column-scroll-indicator');
   if (!isMobile) {
     const fadeObserver = new IntersectionObserver((entries, obs) => {
@@ -1479,7 +1482,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeElements.forEach(el => el.classList.add('visible'));
   }
 
-  // ======= Mobile Menu Toggle =======
   const menuIcon = document.getElementById('menu-icon');
   const menuOverlay = document.getElementById('menu-overlay');
   const closeBtn = document.getElementById('close-btn');
@@ -1492,7 +1494,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ======= Smooth Scroll to Bottom on Arrow Click =======
   const arrow = document.querySelector('.arrow-icon');
   if (arrow) {
     arrow.addEventListener('click', () => {
@@ -1500,7 +1501,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ======= Image Hover Effects (Only for Desktop) =======
   if (!isMobile) {
     document.querySelectorAll('.image-container').forEach(container => {
       const img = container.querySelector('img');
