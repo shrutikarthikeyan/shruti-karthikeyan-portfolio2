@@ -250,7 +250,7 @@ font-size: 1.5rem!important;
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 30px !important;
+  border-radius: 30px;
   transform: scale(1); /* base scale */
   transition: transform 0.8s ease, border-radius 0.8s ease!important;
 }
@@ -1250,9 +1250,18 @@ padding-top: 2%!important;
 body{
   padding-bottom: 0px;
 }
+
+
 @media (max-width: 768px) {
   .footer-email {
     font-size: 1.2rem!important; /* or smaller as needed */
+  }
+}
+@media (max-width: 768px) {
+  img.hero-image,
+  img.hero-image-no-radius,
+  .side-by-side-images img {
+    border-radius: 6px !important;
   }
 }
 

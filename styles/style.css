@@ -3063,6 +3063,44 @@ padding: 0 0rem;
   gap: 20px; /* Optional: adds space between the images */
   justify-content: center; /* Optional: centers the images */
 }
+@media (max-width: 768px) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .fade-slide,
+  .fade-slide.visible,
+  .work-page-grid-item,
+  .work-page-grid-item.visible,
+  .hero-image,
+  .hero-image.visible,
+  .hero-image-no-radius,
+  .hero-image-no-radius.visible,
+  .btn,
+  .btn2,
+  .right-column,
+  .spinning-text,
+  .arrow-icon,
+  .cursor,
+  .testimonial,
+  .info-columns,
+  .cocoa-text-columns,
+  .side-by-side-images img {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  body {
+    overflow-y: auto !important;
+  }
+
+  .cursor {
+    display: none !important;
+  }
+}
 
 
 
