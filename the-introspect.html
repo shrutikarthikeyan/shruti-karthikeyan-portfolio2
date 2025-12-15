@@ -1545,194 +1545,63 @@ body{
 <div id="myID" class="bottomMenu">
   <a href="#top">Back to top ↑</a>
 </div> 
-  
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // ===== CUSTOM CURSOR =====
-    const cursor = document.querySelector('.cursor');
-    const hoverElements = document.querySelectorAll('.btn, .btn2');
-    const images = document.querySelectorAll('img');
-    const colors = ['#E6693D', '#E6693D', '#E6693D'];
-    let currentIndex = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    // Cycle cursor colors every 5 seconds
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % colors.length;
-    }, 5000);
-
-    // Button hover effect
-    hoverElements.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.backgroundColor = colors[currentIndex];
-        cursor.style.borderColor = colors[currentIndex];
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.style.backgroundColor = 'transparent';
-        cursor.style.borderColor = 'black';
-      });
-    });
-
-    // Image hover effect (orange)
-    images.forEach(img => {
-      img.addEventListener('mouseenter', () => {
-        cursor.style.backgroundColor = '#E6693D';
-        cursor.style.borderColor = '#E6693D';
-      });
-      img.addEventListener('mouseleave', () => {
-        cursor.style.backgroundColor = 'transparent';
-        cursor.style.borderColor = 'black';
-      });
-    });
-
-    // Arrow hover and scroll
-    const arrowIcon = document.querySelector('.arrow-icon');
-    if (arrowIcon) {
-      arrowIcon.addEventListener('mouseenter', () => {
-        cursor.style.backgroundColor = '#E6693D';
-        cursor.style.borderColor = '#E6693D';
-      });
-      arrowIcon.addEventListener('mouseleave', () => {
-        cursor.style.backgroundColor = 'transparent';
-        cursor.style.borderColor = 'black';
-      });
-      arrowIcon.addEventListener('click', () => {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-      });
-    }
-
-    // Cursor movement tracking
-    let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    function animateCursor() {
-      currentX += (mouseX - currentX) * 0.2;
-      currentY += (mouseY - currentY) * 0.2;
-      cursor.style.left = currentX + 'px';
-      cursor.style.top = currentY + 'px';
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // ===== FADE-IN STAGGERED ANIMATION =====
-    // Add fade-slide to specific elements
-    document.querySelectorAll('h1, h2, h3, p, img, .info-columns, .hero-image, .hero-image-no-radius, .button-group, .right-column-scroll-indicator, .testimonial')
-      .forEach(el => el.classList.add('fade-slide'));
-
-    // Animate only the initially visible ones
-    const fadeElements = document.querySelectorAll('.fade-slide');
-    let delay = 0;
-    fadeElements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) {
-        setTimeout(() => {
-          el.classList.add('visible');
-        }, delay);
-        delay += 300;
-      }
-    });
-
-    // ===== FOOTER REVEAL ON SCROLL =====
-    const footer = document.getElementById('footer');
-    if (footer) {
-      const observer = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
-          footer.classList.add('visible');
-          observer.unobserve(footer);
-        }
-      }, { threshold: 0.1 });
-      observer.observe(footer);
-    }
-
-    // ===== MOBILE MENU TOGGLE =====
-    const menuIcon = document.getElementById('menu-icon');
-    const menuOverlay = document.getElementById('menu-overlay');
-    const closeBtn = document.getElementById('close-btn');
-
-    if (menuIcon && menuOverlay && closeBtn) {
-      menuIcon.addEventListener('click', () => {
-        menuOverlay.style.display = 'flex';
-      });
-
-      closeBtn.addEventListener('click', () => {
-        menuOverlay.style.display = 'none';
-      });
-
-      menuOverlay.addEventListener('click', (event) => {
-        if (event.target === menuOverlay) {
-          menuOverlay.style.display = 'none';
-        }
-      });
-    }
+  /* =====================================================
+     HARD RESET VISIBILITY (NO DEPENDENCIES)
+  ===================================================== */
+  document.querySelectorAll("*").forEach(el => {
+    el.style.opacity = "1";
+    el.style.transform = "none";
+    el.style.visibility = "visible";
   });
-</script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // === ADD .fade-slide CLASS ===
-    document.querySelectorAll('h1, h2, h3, p, img, .info-columns, .hero-image, .hero-image-no-radius, .button-group, .right-column-scroll-indicator, .testimonial, btn, btn2')
-      .forEach(el => el.classList.add('fade-slide'));
+  /* =====================================================
+     FORCE SCROLL (CRITICAL)
+  ===================================================== */
+  document.documentElement.style.overflow = "auto";
+  document.body.style.overflow = "auto";
+  document.body.style.height = "auto";
+  document.body.style.position = "static";
 
-    // === STAGGER FIRST VISIBLE ON LOAD ===
-    const initialElements = [];
-    let delay = 0;
+  /* =====================================================
+     DISABLE CURSOR COMPLETELY (IT CAN BLOCK VIEW)
+  ===================================================== */
+  const cursor = document.querySelector(".cursor");
+  if (cursor) {
+    cursor.style.display = "none";
+  }
 
-    document.querySelectorAll('.fade-slide').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) {
-        initialElements.push(el);
-      }
-    });
+  /* =====================================================
+     MOBILE = NO JS EFFECTS
+  ===================================================== */
+  if (isMobile) {
+    return; // DONE — page is now readable & scrollable
+  }
 
-    initialElements.forEach(el => {
-      setTimeout(() => {
-        el.classList.add('visible');
-      }, delay);
-      delay += 700;
-    });
+  /* =====================================================
+     DESKTOP: OPTIONAL FADE-IN (SAFE VERSION)
+  ===================================================== */
+  const fadeEls = document.querySelectorAll(".fade-slide");
 
-    // === INTERSECTION OBSERVER FOR OTHERS ===
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // Only animate once
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-slide').forEach(el => {
-      // Skip already visible ones
-      if (!initialElements.includes(el)) {
-        observer.observe(el);
-      }
-    });
+  fadeEls.forEach(el => {
+    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
   });
-</script>
 
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const backToTop = document.getElementById("myID");
-    const footer = document.getElementById("footer");
-
-    function toggleBackToTop() {
-      const footerTop = footer.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-
-      if (footerTop < windowHeight) {
-        backToTop.style.display = "block";
-      } else {
-        backToTop.style.display = "none";
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "none";
+        observer.unobserve(entry.target);
       }
-    }
+    });
+  }, { threshold: 0.1 });
 
-    window.addEventListener("scroll", toggleBackToTop);
-    window.addEventListener("resize", toggleBackToTop);
-    toggleBackToTop(); // Run on load
-  });
+  fadeEls.forEach(el => observer.observe(el));
+});
 </script>
 
 
