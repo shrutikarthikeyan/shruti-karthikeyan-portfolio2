@@ -3101,6 +3101,10 @@ padding: 0 0rem;
     display: none !important;
   }
 }
+/* RESTORE SYSTEM CURSOR */
+html, body {
+  cursor: auto !important;
+}
 
 
 
